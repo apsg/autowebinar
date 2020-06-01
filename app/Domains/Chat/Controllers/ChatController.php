@@ -1,6 +1,7 @@
 <?php
 namespace App\Domains\Chat\Controllers;
 
+use App\Domains\Chat\Events\MessageSentEvent;
 use App\Domains\Chat\Models\Message;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -23,8 +24,10 @@ class ChatController extends Controller
         $user = Auth::user();
 
         $message = $user->messages()->create([
-            'message' => $request->input('message')
+            'message' => $request->input('message'),
         ]);
+
+        broadcast(new MessageSentEvent($user, $message))->toOthers();
 
         return ['status' => 'Message Sent!'];
     }
