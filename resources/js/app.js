@@ -13,8 +13,8 @@ const app = new Vue({
         this.fetchMessages();
 
         Echo.private('chat')
-            .listen('MessageSentEvent', (e) => {
-                console.log(e.message);
+            .listen('.chat.message', (e) => {
+                console.log(e);
                 this.messages.push({
                     message: e.message.message,
                     user: e.user

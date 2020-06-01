@@ -55828,8 +55828,8 @@ var app = new Vue({
     var _this = this;
 
     this.fetchMessages();
-    Echo["private"]('chat').listen('MessageSentEvent', function (e) {
-      console.log(e.message);
+    Echo["private"]('chat').listen('.chat.message', function (e) {
+      console.log(e);
 
       _this.messages.push({
         message: e.message.message,

@@ -3,6 +3,7 @@ namespace App\Domains\Chat\Controllers;
 
 use App\Domains\Chat\Events\MessageSentEvent;
 use App\Domains\Chat\Models\Message;
+use App\Events\OrderTest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
