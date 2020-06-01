@@ -1,7 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Domains\Chat\Models;
 
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
