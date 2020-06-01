@@ -1,6 +1,7 @@
 <?php
 
 use App\Domains\Chat\Controllers\ChatController;
+use App\Domains\Webinar\Controllers\WebinarController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,8 @@ Route::group(['prefix' => 'chat', 'middleware' => 'auth'], function () {
     Route::get('/', ChatController::class . '@index');
     Route::get('messages', ChatController::class . '@fetchMessages');
     Route::post('messages', ChatController::class . '@sendMessage');
+});
+
+Route::group(['prefix' => 'webinar', 'middleware' => 'auth'], function () {
+    Route::get('/', WebinarController::class . '@show');
 });
