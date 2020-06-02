@@ -22,7 +22,7 @@
     export default {
         name: "Chat",
 
-        props: ['user'],
+        props: ['user', 'webinar'],
 
         data() {
             return {
@@ -33,7 +33,7 @@
         created() {
             this.fetchMessages();
 
-            Echo.private('chat')
+            Echo.private('chat.' + this.webinar)
                 .listen('.chat.message', (e) => {
                     console.log(e);
                     this.messages.push({
@@ -50,7 +50,7 @@
 
         methods: {
             fetchMessages() {
-                axios.get('/chat/messages').then(response => {
+                axios.get('/webinar/' + this.webinar + '/messages').then(response => {
                     this.messages = response.data;
                 });
             },
@@ -58,7 +58,7 @@
             addMessage(message) {
                 this.messages.push(message);
 
-                axios.post('/chat/messages', message).then(response => {
+                axios.post('/webinar/' + this.webinar + '/messages', message).then(response => {
                     console.log(response.data);
                 });
 
