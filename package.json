@@ -24,7 +24,10 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.13.0",
+        "font-awesome": "^4.7.0",
         "laravel-echo": "^1.8.0",
-        "pusher-js": "^6.0.3"
+        "pusher-js": "^6.0.3",
+        "vue-moment": "^4.1.0"
     }
 }

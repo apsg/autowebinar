@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div ref="main">
         <iframe :src="src"
                 :width="width"
                 :height="height"
@@ -29,9 +29,16 @@
             }
         },
 
-        created() {
-            console.log(this.$el.clientWidth);
-            console.log(this.$el.clientWidth);
+        mounted() {
+            window.addEventListener('resize', this.onResize);
+            this.onResize(null);
+        },
+
+        methods: {
+            onResize(event) {
+                this.width = this.$refs.main.clientWidth;
+                this.height = 0.75 * this.width;
+            }
         }
     }
 </script>
