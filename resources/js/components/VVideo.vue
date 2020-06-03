@@ -42,7 +42,7 @@
                 return moment().add(this.time, 'seconds').format('YYYY-MM-DD HH:mm:ss');
             },
             shouldShow() {
-                return this.time <= 0;
+                return this.time >= 0;
             }
         },
 

@@ -29,9 +29,20 @@ class Webinar extends Model
         'diff',
     ];
 
+    /**
+     * Positive values - the show is running (started in the past)
+     * Negative values - time to start
+     * @return int
+     */
     public function getDiffAttribute()
     {
-        return -($this->scheduled_at->diffInSeconds());
+        $diffInSeconds = $this->scheduled_at->diffInSeconds();
+
+        if ($this->scheduled_at->isFuture()) {
+            return -$diffInSeconds;
+        }
+
+        return $diffInSeconds;
     }
 
     public function messages()
