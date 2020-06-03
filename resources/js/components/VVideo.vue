@@ -36,6 +36,7 @@
 
         computed: {
             src() {
+                return this.link + '?autoplay=1#t=10s';
                 return this.link + '?autoplay=1#t=' + this.time + 's';
             },
             endDate() {
