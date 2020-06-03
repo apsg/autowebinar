@@ -31,7 +31,6 @@ class Webinar extends Model
 
     public function getDiffAttribute()
     {
-        return -30;
         return -($this->scheduled_at->diffInSeconds());
     }
 

@@ -38,7 +38,8 @@
                     console.log(e);
                     this.messages.push({
                         message: e.message.message,
-                        user: e.user
+                        user: e.user,
+                        created_at: e.message.created_at
                     });
                 });
         },
