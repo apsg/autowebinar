@@ -4652,7 +4652,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "VVideo",
-  props: ['link', 'time', 'start'],
+  props: ['link', 'time'],
   components: {
     Countdown: vuejs_countdown__WEBPACK_IMPORTED_MODULE_0___default.a
   },
@@ -4664,7 +4664,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     src: function src() {
-      return this.link + '?autoplay=1#t=10s';
       return this.link + '?autoplay=1#t=' + this.time + 's';
     },
     endDate: function endDate() {

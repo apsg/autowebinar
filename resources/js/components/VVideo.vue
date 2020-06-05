@@ -16,7 +16,7 @@
     export default {
         name: "VVideo",
 
-        props: ['link', 'time', 'start'],
+        props: ['link', 'time'],
 
         components: {Countdown},
 
@@ -29,7 +29,6 @@
 
         computed: {
             src() {
-                return this.link + '?autoplay=1#t=10s';
                 return this.link + '?autoplay=1#t=' + this.time + 's';
             },
             endDate() {
