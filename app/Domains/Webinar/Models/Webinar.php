@@ -2,6 +2,7 @@
 namespace App\Domains\Webinar\Models;
 
 use App\Domains\Chat\Models\Message;
+use App\Domains\Webinar\Events\WebinarUpdatedEvent;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -34,6 +35,11 @@ class Webinar extends Model
         'diff',
     ];
 
+    protected $dispatchesEvents = [
+        'updated' => WebinarUpdatedEvent::class,
+        'created' => WebinarUpdatedEvent::class,
+    ];
+
     /**
      * Positive values - the show is running (started in the past)
      * Negative values - time to start
@@ -58,5 +64,12 @@ class Webinar extends Model
     public function scopeFuture(Builder $query)
     {
         return $query->where('scheduled_at', '>=', Carbon::now());
+    }
+
+    public function saveQuietly(array $options = [])
+    {
+        return static::withoutEvents(function () use ($options) {
+            return $this->save($options);
+        });
     }
 }

@@ -50,8 +50,6 @@
         mounted() {
             window.addEventListener('resize', this.onResize);
             this.onResize(null);
-
-            // setTimeout(this.refresh, this.time * 1000);
         },
 
         methods: {
