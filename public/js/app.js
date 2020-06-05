@@ -4673,7 +4673,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     window.addEventListener('resize', this.onResize);
-    this.document.addEventListener('ready', this.onResize);
+    document.addEventListener('ready', this.onResize);
   },
   methods: {
     onResize: function onResize(event) {
