@@ -90,4 +90,9 @@ class Webinar extends Model
     {
         return $this->scheduled_at->isFuture();
     }
+
+    public function isChatEnabled() : bool
+    {
+        return $this->isActive();
+    }
 }

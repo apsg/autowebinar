@@ -39,13 +39,13 @@
 
         mounted() {
             window.addEventListener('resize', this.onResize);
-            document.addEventListener('ready', this.onResize);
+            setTimeout(this.onResize, 1000);
         },
 
         methods: {
             onResize(event) {
                 this.width = this.$refs.main.clientWidth;
-                this.height = 0.75 * this.width;
+                this.height = Math.floor((9/16) * this.width);
             },
         }
     }

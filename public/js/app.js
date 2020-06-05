@@ -4673,12 +4673,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     window.addEventListener('resize', this.onResize);
-    document.addEventListener('ready', this.onResize);
+    setTimeout(this.onResize, 1000);
   },
   methods: {
     onResize: function onResize(event) {
       this.width = this.$refs.main.clientWidth;
-      this.height = 0.75 * this.width;
+      this.height = Math.floor(9 / 16 * this.width);
     }
   }
 });
