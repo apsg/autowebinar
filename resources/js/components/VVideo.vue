@@ -39,7 +39,8 @@
 
         mounted() {
             window.addEventListener('resize', this.onResize);
-            setTimeout(this.onResize, 1000);
+            // setTimeout(this.onResize, 1000);
+            window.onload = this.onResize;
         },
 
         methods: {
