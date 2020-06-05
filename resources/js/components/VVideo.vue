@@ -39,7 +39,8 @@
 
         mounted() {
             window.addEventListener('resize', this.onResize);
-            this.onResize(null);
+
+            this.document.addEventListener('ready', this.onResize);
         },
 
         methods: {
