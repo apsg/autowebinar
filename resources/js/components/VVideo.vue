@@ -1,19 +1,12 @@
 <template>
     <div ref="main" class="h-100">
-        <div v-if="shouldShow">
-            <iframe :src="src"
-                    :width="width"
-                    :height="height"
-                    frameborder="0"
-                    allow="autoplay;
+        <iframe :src="src"
+                :width="width"
+                :height="height"
+                frameborder="0"
+                allow="autoplay;
                 fullscreen"
-                    allowfullscreen></iframe>
-        </div>
-        <div v-else class="d-flex justify-content-center h-100">
-            <div class="d-flex flex-column justify-content-center text-white">
-                <Countdown :end="start"></Countdown>
-            </div>
-        </div>
+                allowfullscreen></iframe>
     </div>
 </template>
 
@@ -41,9 +34,6 @@
             },
             endDate() {
                 return moment().add(this.time, 'seconds').format('YYYY-MM-DD HH:mm:ss');
-            },
-            shouldShow() {
-                return this.time >= 0;
             }
         },
 
@@ -54,10 +44,8 @@
 
         methods: {
             onResize(event) {
-                if (this.shouldShow) {
-                    this.width = this.$refs.main.clientWidth;
-                    this.height = 0.75 * this.width;
-                }
+                this.width = this.$refs.main.clientWidth;
+                this.height = 0.75 * this.width;
             },
         }
     }

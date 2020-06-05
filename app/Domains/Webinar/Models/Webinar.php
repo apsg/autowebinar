@@ -72,4 +72,22 @@ class Webinar extends Model
             return $this->save($options);
         });
     }
+
+    public function isActive() : bool
+    {
+        if ($this->scheduled_at->isFuture()) {
+            return false;
+        }
+
+        if ($this->scheduled_at->isPast() && $this->scheduled_at->diffInSeconds() < 300) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function isFuture() : bool
+    {
+        return $this->scheduled_at->isFuture();
+    }
 }
