@@ -7,9 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', WebinarController::class . '@index');
 
 Route::get('/home', HomeController::class . '@index')->name('home');
 
@@ -20,7 +18,7 @@ Route::group(['prefix' => 'chat', 'middleware' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'webinar', 'middleware' => 'auth'], function () {
-    Route::get('/{webinar}', WebinarController::class . '@show');
+    Route::get('/{webinar}', WebinarController::class . '@show')->name('webinar.show');
     Route::get('/{webinar}/messages', ChatController::class . '@index');
     Route::get('/{webinar}/messages', ChatController::class . '@fetchMessages');
     Route::post('/{webinar}/messages', ChatController::class . '@sendMessage');

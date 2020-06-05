@@ -3,20 +3,25 @@ namespace App\Domains\Webinar\Models;
 
 use App\Domains\Chat\Models\Message;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int    id
  * @property string name
+ * @property string description
  * @property string video
  * @property Carbon scheduled_at
  * @property Carbon created_at
  * @property Carbon updated_at
+ *
+ * @method static Builder future()
  */
 class Webinar extends Model
 {
     protected $fillable = [
         'name',
+        'description',
         'video',
         'scheduled_at',
     ];
@@ -48,5 +53,10 @@ class Webinar extends Model
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function scopeFuture(Builder $query)
+    {
+        return $query->where('scheduled_at', '>=', Carbon::now());
     }
 }
