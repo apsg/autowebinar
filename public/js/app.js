@@ -4671,8 +4671,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    window.addEventListener('resize', this.onResize); // setTimeout(this.onResize, 1000);
-
+    window.addEventListener('resize', this.onResize);
     window.onload = this.onResize;
   },
   methods: {

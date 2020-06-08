@@ -31,14 +31,13 @@
             src() {
                 return this.link + '?autoplay=1#t=' + this.time + 's';
             },
-            endDate() {czy dev wolny?
+            endDate() {
                 return moment().add(this.time, 'seconds').format('YYYY-MM-DD HH:mm:ss');
             }
         },
 
         mounted() {
             window.addEventListener('resize', this.onResize);
-            // setTimeout(this.onResize, 1000);
             window.onload = this.onResize;
         },
 

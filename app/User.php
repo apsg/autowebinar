@@ -14,6 +14,7 @@ use Illuminate\Support\Collection;
  * @property string                    email
  * @property string                    name
  * @property string                    password
+ * @property string|null               login_token
  * @property Carbon                    email_verified_at
  * @property Carbon                    created_at
  * @property Carbon                    updated_at
@@ -31,7 +32,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'login_token',
     ];
 
     /**

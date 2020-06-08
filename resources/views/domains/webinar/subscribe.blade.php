@@ -34,7 +34,7 @@
                             </label>
                         </div>
                         <div class="text-center">
-                            <button class="btn-primary btn">Zapisz się</button>
+                            <button class="btn-dark btn">Zapisz się</button>
                         </div>
                     </form>
                 </div>
