@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Domains\Webinar\Models\Webinar;
+use App\Domains\Webinar\Policies\WebinarPolicy;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -13,7 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        Webinar::class => WebinarPolicy::class,
     ];
 
     /**
@@ -25,6 +28,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('admin', function (User $user) {
+            return $user->is_admin;
+        });
     }
 }

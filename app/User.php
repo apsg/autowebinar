@@ -17,6 +17,7 @@ use Illuminate\Support\Collection;
  * @property string                    password
  * @property string|null               login_token
  * @property Carbon                    email_verified_at
+ * @property bool                      is_admin
  * @property Carbon                    created_at
  * @property Carbon                    updated_at
  *
@@ -27,11 +28,6 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name',
         'email',
@@ -39,20 +35,12 @@ class User extends Authenticatable
         'login_token',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
+        'is_admin',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
