@@ -1,12 +1,13 @@
 <?php
-
 namespace App\Providers;
 
 use App\Domains\Webinar\Events\WebinarUpdatedEvent;
 use App\Domains\Webinar\Listeners\UpdateVimeoDetailsListener;
+use App\Listeners\LogSendingMessage;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Mail\Events\MessageSending;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         WebinarUpdatedEvent::class => [
             UpdateVimeoDetailsListener::class,
+        ],
+        MessageSending::class => [
+//            LogSendingMessage::class,
         ],
     ];
 

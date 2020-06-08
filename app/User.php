@@ -4,6 +4,7 @@ namespace App;
 
 use App\Domains\Chat\Models\Message;
 use App\Domains\Webinar\Models\Webinar;
+use App\Repositories\UsersRepository;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -70,5 +71,10 @@ class User extends Authenticatable
     public function isSubscribed(Webinar $webinar) : bool
     {
         return $this->webinars()->where('id', $webinar->id)->exists();
+    }
+
+    public function newLoginToken() : string
+    {
+        return app(UsersRepository::class)->generateNewLoginToken($this);
     }
 }
