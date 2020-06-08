@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Domains\Chat\Models\Message;
+use App\Domains\Webinar\Models\Webinar;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,6 +19,7 @@ use Illuminate\Support\Collection;
  * @property Carbon                    updated_at
  *
  * @property-read Collection|Message[] messages
+ * @property-read Collection|Webinar[] webinars
  */
 class User extends Authenticatable
 {
@@ -53,5 +55,10 @@ class User extends Authenticatable
     public function messages()
     {
         return $this->hasMany(Message::class);
+    }
+
+    public function webinars()
+    {
+        return $this->belongsToMany(Webinar::class);
     }
 }

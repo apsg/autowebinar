@@ -31,7 +31,7 @@
             src() {
                 return this.link + '?autoplay=1#t=' + this.time + 's';
             },
-            endDate() {
+            endDate() {czy dev wolny?
                 return moment().add(this.time, 'seconds').format('YYYY-MM-DD HH:mm:ss');
             }
         },

@@ -5,4 +5,3 @@
         </div>
     </div>
 </div>
-@include('domains.webinar.active')
