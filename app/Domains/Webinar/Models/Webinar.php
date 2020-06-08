@@ -46,7 +46,9 @@ class Webinar extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)
+            ->withPivot('email_sent_at')
+            ->as('subscription');
     }
 
     /**

@@ -59,6 +59,12 @@ class User extends Authenticatable
 
     public function webinars()
     {
-        return $this->belongsToMany(Webinar::class);
+        return $this->belongsToMany(Webinar::class)
+            ->as('subscription');
+    }
+
+    public function isSubscribed(Webinar $webinar) : bool
+    {
+        return $this->webinars()->where('id', $webinar->id)->exists();
     }
 }
