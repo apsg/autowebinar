@@ -29,7 +29,7 @@
                     <h5>
                         <i class="fa fa-list color-second"></i> Opis wydarzenia
                     </h5>
-                    <p>{{ nl2br($webinar->description) }}</p>
+                    <p>{!! nl2br($webinar->description) !!}</p>
                 </div>
                 <hr/>
                 <div class="text-center">

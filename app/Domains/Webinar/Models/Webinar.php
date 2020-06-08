@@ -105,4 +105,9 @@ class Webinar extends Model
     {
         return $this->isActive();
     }
+
+    public function getLink() : string
+    {
+        return route('webinar.show', $this);
+    }
 }
