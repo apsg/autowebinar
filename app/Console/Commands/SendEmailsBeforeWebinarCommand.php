@@ -44,7 +44,7 @@ class SendEmailsBeforeWebinarCommand extends Command
     public function handle()
     {
         $webinars = Webinar::where('scheduled_at', '>=', Carbon::now()->addMinutes(1))
-            ->where('scheduled_at', '<=', Carbon::now()->addMinutes(60))
+            ->where('scheduled_at', '<=', Carbon::now()->addMinutes(5))
             ->get();
 
         /** @var Webinar $webinar */
