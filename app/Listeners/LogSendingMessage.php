@@ -5,6 +5,6 @@ class LogSendingMessage
 {
     public function handle($event)
     {
-        \Log::info('sending email', compact('event'));
+//        \Log::info('sending email', compact('event'));
     }
 }

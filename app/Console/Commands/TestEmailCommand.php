@@ -34,11 +34,6 @@ class TestEmailCommand extends Command
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
         /** @var User $user */

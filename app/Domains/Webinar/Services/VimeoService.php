@@ -9,7 +9,7 @@ class VimeoService
     {
         $pattern = '/.+vimeo.com\/(.{0}|video\/)(?P<id>\d+)/';
 
-        $matches = null;
+        $matches = [];
         preg_match($pattern, $url, $matches);
 
         return Arr::get($matches, 'id', null);
