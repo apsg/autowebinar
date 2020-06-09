@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;

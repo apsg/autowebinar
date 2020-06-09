@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Controllers;
 
 use App\Domains\Webinar\Models\Webinar;
@@ -57,8 +58,8 @@ class WebinarController extends Controller
             return redirect('/');
         }
 
-        if (!$user->isSubscribed($webinar)) {
-            flash()->error("Nie zapisano Cię na ten webinar!");
+        if (! $user->isSubscribed($webinar)) {
+            flash()->error('Nie zapisano Cię na ten webinar!');
 
             return redirect('/');
         }

@@ -14,7 +14,7 @@ class WebinarAccessMail extends Mailable
     /** @var Webinar */
     public $webinar;
 
-    /** @var string $token */
+    /** @var string */
     public $token;
 
     public function __construct(Webinar $webinar, string $token)

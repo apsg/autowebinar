@@ -57,12 +57,12 @@ class User extends Authenticatable
             ->as('subscription');
     }
 
-    public function isSubscribed(Webinar $webinar) : bool
+    public function isSubscribed(Webinar $webinar): bool
     {
         return $this->webinars()->where('id', $webinar->id)->exists();
     }
 
-    public function newLoginToken() : string
+    public function newLoginToken(): string
     {
         return app(UsersRepository::class)->generateNewLoginToken($this);
     }

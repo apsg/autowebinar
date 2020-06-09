@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Policies;
 
 use App\Domains\Webinar\Models\Webinar;

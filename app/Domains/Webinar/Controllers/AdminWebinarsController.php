@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Controllers;
 
 use App\Domains\Webinar\Models\Webinar;

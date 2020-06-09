@@ -17,7 +17,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && !Auth::user()->is_admin) {
+        if (Auth::check() && ! Auth::user()->is_admin) {
             throw new UnauthorizedException('Nie masz tu dostępu');
         }
 
