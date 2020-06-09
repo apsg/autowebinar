@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Listeners;
 
 use App\Domains\Webinar\Events\WebinarUpdatedEvent;

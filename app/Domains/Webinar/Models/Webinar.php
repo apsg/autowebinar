@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Models;
 
 use App\Domains\Chat\Models\Message;
@@ -52,7 +53,7 @@ class Webinar extends Model
 
     /**
      * Positive values - the show is running (started in the past)
-     * Negative values - time to start
+     * Negative values - time to start.
      * @return int
      */
     public function getDiffAttribute()
@@ -83,7 +84,7 @@ class Webinar extends Model
         });
     }
 
-    public function isActive() : bool
+    public function isActive(): bool
     {
         if ($this->scheduled_at->isFuture()) {
             return false;
@@ -96,17 +97,17 @@ class Webinar extends Model
         return false;
     }
 
-    public function isFuture() : bool
+    public function isFuture(): bool
     {
         return $this->scheduled_at->isFuture();
     }
 
-    public function isChatEnabled() : bool
+    public function isChatEnabled(): bool
     {
         return $this->isActive();
     }
 
-    public function getLink() : string
+    public function getLink(): string
     {
         return route('webinar.show', $this);
     }

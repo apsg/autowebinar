@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Repositories;
 
 use App\User;
@@ -7,7 +8,7 @@ use Illuminate\Support\Str;
 
 class UsersRepository
 {
-    public function firstOrCreate(string $name, string $email) : User
+    public function firstOrCreate(string $name, string $email): User
     {
         $user = User::firstOrCreate(
             [
@@ -26,12 +27,12 @@ class UsersRepository
         return $user;
     }
 
-    public function findByToken(string $token) : User
+    public function findByToken(string $token): User
     {
         return User::where('login_token', $token)->firstOrFail();
     }
 
-    public function clearLoginToken(User $user) : User
+    public function clearLoginToken(User $user): User
     {
         $user->update([
             'login_token' => null,
@@ -40,7 +41,7 @@ class UsersRepository
         return $user;
     }
 
-    public function generateNewLoginToken(User $user) : string
+    public function generateNewLoginToken(User $user): string
     {
         $token = Str::random(16);
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Providers;
 
 use App\Domains\Webinar\Events\WebinarUpdatedEvent;
@@ -24,7 +25,7 @@ class EventServiceProvider extends ServiceProvider
             UpdateVimeoDetailsListener::class,
         ],
         MessageSending::class => [
-//            LogSendingMessage::class,
+            //            LogSendingMessage::class,
         ],
     ];
 

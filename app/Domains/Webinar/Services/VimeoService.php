@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Services;
 
 use Illuminate\Support\Arr;

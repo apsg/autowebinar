@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domains\Webinar\Models;
 
 use App\User;
@@ -6,7 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
 /**
- *  App\Domains\Webinar\Models\UserWebinar
+ *  App\Domains\Webinar\Models\UserWebinar.
  *
  * @property int          user_id
  * @property int          webinar_id
