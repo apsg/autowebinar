@@ -21,4 +21,29 @@ class AdminScheduledController extends Controller
 
         return back();
     }
+
+    public function import(Webinar $webinar)
+    {
+        $csv = array_map('str_getcsv', file(request()->file('file')->getPathname()));
+
+        $counter = 0;
+        foreach ($csv as $row) {
+            try {
+                $data = explode(';', $row[0]);
+
+                $webinar->scheduled_messages()->create([
+                    'time'    => $data[0],
+                    'name'    => $data[1],
+                    'message' => $data[2],
+                ]);
+                $counter++;
+            } catch (\Exception $exception) {
+                // ignore
+            }
+        }
+
+        flash("Zaimportowano {$counter} wiadomości");
+
+        return back();
+    }
 }

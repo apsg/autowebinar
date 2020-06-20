@@ -10,7 +10,8 @@
                     <button class="btn btn-primary">Zapisz</button>
                 </form>
             </div>
-            <div class="col-md-12 card">
+            <div class="col-md-12 card mt-2">
+                <h3 class="mt-2">Zaplanowane wiadomości</h3>
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -53,6 +54,25 @@
                     </tr>
                     </tfoot>
                 </table>
+            </div>
+            <div class="col-md-12 card mt-2 pb-3">
+                <h3 class="mt-2">Importuj wiadomości</h3>
+                <form action="{{ route('admin.scheduled.import', $webinar) }}" method="post"
+                      enctype="multipart/form-data">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-9">
+                            <label>Plik CSV z wiadomościami w formacie czas[s];nick;wiadomość</label>
+                            <input type="file" name="file" accept="text/csv" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-primary">
+                                <i class="fa fa-upload"></i>
+                                Importuj plik
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

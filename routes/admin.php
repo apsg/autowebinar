@@ -21,6 +21,7 @@ Route::group([
 
         Route::group(['prefix' => '/{webinar}/scheduled'], function () {
             Route::post('/', AdminScheduledController::class . '@store')->name('admin.scheduled.store');
+            Route::post('/import', AdminScheduledController::class . '@import')->name('admin.scheduled.import');
             Route::delete('/{message}', AdminScheduledController::class . '@destroy')->name('admin.scheduled.destroy');
         });
     });
