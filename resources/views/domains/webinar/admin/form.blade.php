@@ -40,3 +40,13 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 </div>
+<div class="form-group">
+    <label>Długość filmu w sekundach</label>
+    <input type="number" min="1" name="length" required
+           class="form-control"
+           value="{{ old('length') ?? (isset($webinar) ? $webinar->length : 1 ) }}"
+    >
+    @error('length')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+</div>
