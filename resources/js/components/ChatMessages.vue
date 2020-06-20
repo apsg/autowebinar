@@ -4,9 +4,9 @@
             <div class="chat-body clearfix">
                 <div class="header">
                     <strong class="primary-font">
-                        {{ message.user.name }}
+                        {{ message.name }}
                     </strong>
-                    <span class="small pull-right pr-2"> {{ message.created_at | moment('YYYY-MM-DD HH:mm:ss') }}</span>
+                    <span class="small pull-right pr-2"> {{ message.timestamp | moment('YYYY-MM-DD HH:mm:ss') }}</span>
                 </div>
                 <p>
                     {{ message.message }}

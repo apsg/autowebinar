@@ -26,7 +26,9 @@
 
         data() {
             return {
-                messages: []
+                messages: [],
+                scheduled: [],
+                time: 0
             }
         },
 
@@ -42,6 +44,8 @@
                         created_at: e.message.created_at
                     });
                 });
+
+            setTimeout(this.tick, 1000);
         },
 
         mounted() {
@@ -52,7 +56,11 @@
         methods: {
             fetchMessages() {
                 axios.get('/webinar/' + this.webinar + '/messages').then(response => {
-                    this.messages = response.data;
+                    this.messages = response.data.messages;
+                    this.scheduled = response.data.scheduled;
+                    this.time = response.data.time;
+
+                    this.processScheduled();
                 });
             },
 
@@ -73,6 +81,22 @@
             scrollBottom() {
                 var el = document.getElementById('scroll');
                 el.scrollTop = el.scrollHeight;
+            },
+
+            tick() {
+                this.time += 1;
+                this.processScheduled();
+                setTimeout(this.tick, 1000);
+            },
+
+            processScheduled() {
+                this.scheduled
+                    .filter(message => message.time <= this.time)
+                    .forEach(message => {
+                        console.log('Adding message ' + message);
+                        this.messages.push(message);
+                        this.scheduled.splice(this.scheduled.indexOf(message), 1);
+                    });
             }
         }
     }

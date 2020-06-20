@@ -3,23 +3,36 @@
 namespace App\Domains\Webinar\Models;
 
 use App\Domains\Chat\Models\Message;
+use App\Domains\Chat\Models\ScheduledMessage;
+use App\Domains\Chat\Transformers\MessageTransformer;
+use App\Domains\Chat\Transformers\ScheduledMessageTransformer;
 use App\Domains\Webinar\Events\WebinarUpdatedEvent;
+use App\Helpers\FractalHelper;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection as SupportCollection;
 
 /**
- * @property int                    id
- * @property string                 name
- * @property string                 description
- * @property string                 video
- * @property Carbon                 scheduled_at
- * @property Carbon                 created_at
- * @property Carbon                 updated_at
+ * @class App\Domains\Webinar\Models\Webinar
  *
- * @property-read Collection|User[] users
+ * @property int                                id
+ * @property string                             name
+ * @property string                             description
+ * @property string                             video
+ * @property int                                length
+ * @property Carbon                             scheduled_at
+ * @property Carbon                             created_at
+ * @property Carbon                             updated_at
+ *
+ * @property-read Collection|User[]             users
+ * @property-read Collection|Message[]          messages
+ * @property-read array                         all_messages
+ * @property-read Collection|ScheduledMessage[] scheduled_messages
+ * @property-read Collection|ScheduledMessage[] scheduled_future_messages
+ * @property-read int|null                      current_time
  *
  * @method static Builder future()
  */
@@ -30,6 +43,7 @@ class Webinar extends Model
         'description',
         'video',
         'scheduled_at',
+        'length',
     ];
 
     protected $dates = [
@@ -38,6 +52,7 @@ class Webinar extends Model
 
     protected $appends = [
         'diff',
+        'current_time',
     ];
 
     protected $dispatchesEvents = [
@@ -49,6 +64,48 @@ class Webinar extends Model
     {
         return $this->belongsToMany(User::class)
             ->using(UserWebinar::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class)
+            ->orderBy('created_at');
+    }
+
+    public function scheduled_messages()
+    {
+        return $this->hasMany(ScheduledMessage::class)
+            ->orderBy('time');
+    }
+
+    public function getAllMessagesAttribute() : SupportCollection
+    {
+        $messages = $this->getTransformedMessages();
+        $scheduled = $this->getTransformedScheduledMessages();
+
+        $allMessages = collect($messages)->push(...$scheduled);
+
+        return $allMessages->sortBy('timestamp');
+    }
+
+    public function getScheduledFutureMessagesAttribute()
+    {
+        return $this->scheduled_messages()
+            ->where('time', '>', $this->current_time)
+            ->get();
+    }
+
+    public function getTransformedMessages() : array
+    {
+        return FractalHelper::toArray($this->messages, new MessageTransformer());
+    }
+
+    public function getTransformedScheduledMessages() : array
+    {
+        return FractalHelper::toArray(
+            $this->scheduled_messages()->past($this->current_time)->get(),
+            new ScheduledMessageTransformer()
+        );
     }
 
     /**
@@ -65,11 +122,6 @@ class Webinar extends Model
         }
 
         return $diffInSeconds;
-    }
-
-    public function messages()
-    {
-        return $this->hasMany(Message::class);
     }
 
     public function scopeFuture(Builder $query)
@@ -90,7 +142,7 @@ class Webinar extends Model
             return false;
         }
 
-        if ($this->scheduled_at->isPast() && $this->scheduled_at->diffInSeconds() < 300) {
+        if ($this->scheduled_at->isPast() && $this->scheduled_at->diffInSeconds() <= $this->length) {
             return true;
         }
 
@@ -102,13 +154,26 @@ class Webinar extends Model
         return $this->scheduled_at->isFuture();
     }
 
-    public function isChatEnabled(): bool
+    public function isChatEnabled() : bool
     {
         return $this->isActive();
     }
 
-    public function getLink(): string
+    public function getLink() : string
     {
         return route('webinar.show', $this);
+    }
+
+    public function getCurrentTimeAttribute() : ?int
+    {
+        if ($this->isFuture()) {
+            return -$this->scheduled_at->diffInSeconds();
+        }
+
+        if ($this->isActive()) {
+            return $this->scheduled_at->diffInSeconds();
+        }
+
+        return null;
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="input-group">
+    <div class="input-group mb-2">
         <input id="btn-input" type="text" name="message" class="form-control input-sm" placeholder="Napisz coś..." v-model="newMessage" @keyup.enter="sendMessage">
 
         <span class="input-group-btn">
@@ -29,7 +29,7 @@
                 this.$emit('messagesent', {
                     user: this.user,
                     message: this.newMessage,
-                    created_at: new Date()
+                    timestamp: new Date()
                 });
 
                 this.newMessage = ''

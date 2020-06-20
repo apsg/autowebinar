@@ -3,7 +3,7 @@
         <div class="col-md-9 col-sm-12">
             <v-video
                     link="{{ $webinar->video }}"
-                    time="{{ $webinar->diff }}"
+                    time="{{ $webinar->current_time }}"
                     start="{{ $webinar->scheduled_at }}"
             ></v-video>
         </div>

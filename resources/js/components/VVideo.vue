@@ -11,14 +11,10 @@
 </template>
 
 <script>
-    import Countdown from 'vuejs-countdown';
-
     export default {
         name: "VVideo",
 
         props: ['link', 'time'],
-
-        components: {Countdown},
 
         data() {
             return {
