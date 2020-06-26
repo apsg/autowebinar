@@ -14,7 +14,7 @@ class MessagesAddWebinarId extends Migration
     public function up()
     {
         Schema::table('messages', function (Blueprint $table) {
-            $table->unsignedBigInteger('webinar_id');
+            $table->unsignedBigInteger('webinar_id')->default(1);
 
             $table->foreign('webinar_id')
                 ->references('id')

@@ -24,6 +24,7 @@ class UpdateVimeoDetailsListener //implements ShouldQueue
     {
         $webinar = $event->webinar;
         $webinar->video = VimeoService::fixUrl($webinar->video);
+        $webinar->length = VimeoService::getDuration(VimeoService::getVideoId($webinar->video));
         $webinar->saveQuietly();
     }
 }
