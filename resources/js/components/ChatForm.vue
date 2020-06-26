@@ -27,7 +27,7 @@
                 }
 
                 this.$emit('messagesent', {
-                    user: this.user,
+                    name: this.user.name,
                     message: this.newMessage,
                     timestamp: new Date()
                 });

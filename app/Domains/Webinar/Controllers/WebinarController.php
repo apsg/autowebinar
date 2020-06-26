@@ -24,9 +24,11 @@ class WebinarController extends Controller
 
     public function show(Webinar $webinar)
     {
-//        $webinar->update([
-//            'scheduled_at' => Carbon::now()->subSeconds(1),
-//        ]);
+        if (!app()->environment('production')) {
+            $webinar->update([
+                'scheduled_at' => Carbon::now()->subSeconds(1),
+            ]);
+        }
 
         return view('domains.webinar.webinar')->with(compact('webinar'));
     }
