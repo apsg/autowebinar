@@ -3,9 +3,20 @@ php:
   - 7.3
   - 7.4
 
+before_install:
+  - mysql -e 'CREATE DATABASE autowebinar_test;'
+
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
 script:
   - composer test
+
+services:
+  - mysql
+
+env:
+  - DB_DATABASE=autowebinar_test
+  - DB_USERNAME=travis
+  - DB_PASSWORD=
