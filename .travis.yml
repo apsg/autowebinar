@@ -17,6 +17,5 @@ services:
   - mysql
 
 env:
-  - DB_DATABASE=autowebinar_test
-  - DB_USERNAME=travis
-  - DB_PASSWORD=
+  global:
+      - DB_DATABASE=autowebinar_test DB_USERNAME=travis DB_PASSWORD=
