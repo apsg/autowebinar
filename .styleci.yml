@@ -4,7 +4,6 @@ risky: false
 
 enabled:
   - concat_with_spaces
-  - mb_str_functions
   - no_homoglyph_names
   - psr4
   - non_printable_character
