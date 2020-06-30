@@ -3,15 +3,15 @@ preset: laravel
 risky: false
 
 enabled:
-  concat_with_spaces
+  - concat_with_spaces
   return_type_declaration:
     space_before: one
 
 disabled:
-  concat_without_spaces
-  blank_line_after_opening_tag
-  short_array_syntax
-  single_blank_line_before_namespace
+  - concat_without_spaces
+  - blank_line_after_opening_tag
+  - short_array_syntax
+  - single_blank_line_before_namespace
 
 finder:
   exclude:
