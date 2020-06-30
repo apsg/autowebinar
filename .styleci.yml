@@ -4,17 +4,6 @@ risky: false
 
 enabled:
   - concat_with_spaces
-  - no_homoglyph_names
-  - psr4
-  - non_printable_character
-  - random_api_migration
-  - declare_strict_types
-  - final_internal_class
-  - void_return
-  - strict_comparison
-  - simplified_null_return
-  - final_internal_class
-  - ereg_to_preg
 
 disabled:
   - concat_without_spaces
