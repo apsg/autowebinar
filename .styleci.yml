@@ -9,6 +9,18 @@ disabled:
   - concat_without_spaces
   - blank_line_after_opening_tag
   - short_array_syntax
+  - mb_str_functions
+  - no_homoglyph_names
+  - psr4
+  - non_printable_character
+  - random_api_migration
+  - declare_strict_types
+  - final_internal_class
+  - void_return
+  - strict_comparison
+  - simplified_null_return
+  - final_internal_class
+  - ereg_to_preg
 
 finder:
   exclude:
