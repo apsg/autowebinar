@@ -4,9 +4,8 @@ risky: false
 
 enabled:
   - concat_with_spaces
-  return_type_declaration:
-    space_before:
-    - one
+  - return_type_declaration:
+    - space_before: "one"
 
 disabled:
   - concat_without_spaces
