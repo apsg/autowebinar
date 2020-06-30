@@ -24,7 +24,7 @@ class WebinarController extends Controller
 
     public function show(Webinar $webinar)
     {
-        if (!app()->environment('production')) {
+        if (! app()->environment('production')) {
             $webinar->update([
                 'scheduled_at' => Carbon::now()->subSeconds(1),
             ]);

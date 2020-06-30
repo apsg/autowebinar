@@ -136,7 +136,7 @@ class Webinar extends Model
         });
     }
 
-    public function isActive(): bool
+    public function isActive() : bool
     {
         if ($this->scheduled_at->isFuture()) {
             return false;
@@ -149,7 +149,7 @@ class Webinar extends Model
         return false;
     }
 
-    public function isFuture(): bool
+    public function isFuture() : bool
     {
         return $this->scheduled_at->isFuture();
     }

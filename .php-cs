@@ -10,6 +10,7 @@ $rules = [
         'operators' => ['=>' => null],
     ],
     'blank_line_after_namespace'                  => true,
+    'blank_line_after_opening_tag'                => false,
     'blank_line_before_statement'                 => [
         'statements' => ['return'],
     ],
@@ -20,7 +21,7 @@ $rules = [
     ],
     'class_definition'                            => true,
     'concat_space'                                => [
-        'spacing' => 'one'
+        'spacing' => 'one',
     ],
     'declare_equal_normalize'                     => true,
     'elseif'                                      => true,
@@ -30,16 +31,16 @@ $rules = [
     'function_declaration'                        => true,
     'function_typehint_space'                     => true,
     'heredoc_to_nowdoc'                           => true,
-    'include' => true,
-    'increment_style' => ['style' => 'post'],
-    'indentation_type' => true,
-    'linebreak_after_opening_tag' => true,
-    'line_ending' => true,
-    'lowercase_cast' => true,
-    'lowercase_constants' => true,
-    'lowercase_keywords' => true,
-    'lowercase_static_reference' => true, // added from Symfony
-    'magic_method_casing' => true, // added from Symfony
+    'include'                                     => true,
+    'increment_style'                             => ['style' => 'post'],
+    'indentation_type'                            => true,
+    'linebreak_after_opening_tag'                 => true,
+    'line_ending'                                 => true,
+    'lowercase_cast'                              => true,
+    'lowercase_constants'                         => true,
+    'lowercase_keywords'                          => true,
+    'lowercase_static_reference'                  => true, // added from Symfony
+    'magic_method_casing'                         => true, // added from Symfony
     'magic_constant_casing' => true,
     'method_argument_space' => true,
     'native_function_casing' => true,
@@ -52,19 +53,19 @@ $rules = [
             'use_trait',
         ]
     ],
-    'no_blank_lines_after_class_opening' => true,
-    'no_blank_lines_after_phpdoc' => true,
-    'no_closing_tag' => true,
-    'no_empty_phpdoc' => true,
-    'no_empty_statement' => true,
+    'no_blank_lines_after_class_opening'          => true,
+    'no_blank_lines_after_phpdoc'                 => true,
+    'no_closing_tag'                              => true,
+    'no_empty_phpdoc'                             => true,
+    'no_empty_statement'                          => true,
     'no_leading_import_slash'                     => true,
     'no_leading_namespace_whitespace'             => true,
     'no_mixed_echo_print'                         => [
-        'use' => 'echo'
+        'use' => 'echo',
     ],
     'no_multiline_whitespace_around_double_arrow' => true,
     'multiline_whitespace_before_semicolons'      => [
-        'strategy' => 'no_multi_line'
+        'strategy' => 'no_multi_line',
     ],
     'no_short_bool_cast'                          => true,
     'no_singleline_whitespace_before_semicolons'  => true,
@@ -104,7 +105,7 @@ $rules = [
     'short_scalar_cast'                           => true,
     'simplified_null_return'                      => false, // disabled by Shift
     'single_blank_line_at_eof'                    => true,
-    'single_blank_line_before_namespace'          => true,
+    'single_blank_line_before_namespace'          => false,
     'single_class_element_per_statement'          => true,
     'single_import_per_statement'                 => true,
     'single_line_after_imports'                   => true,
