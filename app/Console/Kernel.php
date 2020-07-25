@@ -2,8 +2,7 @@
 
 namespace App\Console;
 
-use App\Console\Commands\SendEmailsBeforeWebinarCommand;
-use App\Console\Commands\TestEmailCommand;
+use App\Domains\Webinar\Commands\RefreshWebinarsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,8 +14,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        TestEmailCommand::class,
-        SendEmailsBeforeWebinarCommand::class,
+//        TestEmailCommand::class,
+//        SendEmailsBeforeWebinarCommand::class,
+        RefreshWebinarsCommand::class,
     ];
 
     /**
@@ -27,7 +27,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(SendEmailsBeforeWebinarCommand::class)->everyMinute();
+//        $schedule->command(SendEmailsBeforeWebinarCommand::class)->everyMinute();
+        $schedule->command(RefreshWebinarsCommand::class)->everyTenMinutes();
     }
 
     /**

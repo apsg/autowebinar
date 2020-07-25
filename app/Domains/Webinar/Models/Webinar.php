@@ -24,6 +24,7 @@ use Illuminate\Support\Collection as SupportCollection;
  * @property string                             video
  * @property int                                length
  * @property Carbon                             scheduled_at
+ * @property string                             repeat
  * @property Carbon                             created_at
  * @property Carbon                             updated_at
  *
@@ -35,6 +36,7 @@ use Illuminate\Support\Collection as SupportCollection;
  * @property-read int|null                      current_time
  *
  * @method static Builder future()
+ * @method static Builder finished()
  */
 class Webinar extends Model
 {
@@ -44,6 +46,7 @@ class Webinar extends Model
         'video',
         'scheduled_at',
         'length',
+        'repeat',
     ];
 
     protected $dates = [
@@ -175,5 +178,10 @@ class Webinar extends Model
         }
 
         return null;
+    }
+
+    public function scopeFinished(Builder $query)
+    {
+        return $query->whereRaw('time_to_sec(timediff(scheduled_at, CURRENT_TIMESTAMP)) < -length');
     }
 }
