@@ -1,16 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+    <p>Content</p>
     @if($webinar->isActive())
-        @auth
+        <p>Is active</p>
+        @guest()
+            <p>Guest</p>
+            @include('domains.webinar.subscribe')
+        @endguest
+        @auth()
+            <p>Auth</p>
             @include('domains.webinar.active')
         @endauth
-        @guest()
-            @include('domains.webinar.finished')
-        @endguest
     @elseif($webinar->isFuture())
         @include('domains.webinar.future')
-        @include('domains.webinar.subscribe')
     @else
         @include('domains.webinar.finished')
     @endif

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12 card">
             <div class="card-header">
-                <h4 class="text-center">Zapisz się na ten webinar</h4>
+                <h4 class="text-center">Webinar w trakcie. Dołącz.</h4>
             </div>
             @if(Auth::check() && Auth::user()->isSubscribed($webinar))
                 <div class="card-body">
@@ -34,7 +34,7 @@
                             </label>
                         </div>
                         <div class="text-center">
-                            <button class="btn-dark btn">Zapisz się</button>
+                            <button class="btn-dark btn">Dołącz</button>
                         </div>
                     </form>
                 </div>
