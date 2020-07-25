@@ -9,7 +9,7 @@ before_install:
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
-  - php artisan migrate --force
+  - php artisan migrate --database=testy --force
 
 script:
   - composer test
