@@ -42,4 +42,13 @@ class AdminWebinarsController extends Controller
 
         return back();
     }
+
+    public function destroy(Webinar $webinar)
+    {
+        $webinar->delete();
+
+        flash('Webinar usunięty');
+
+        return redirect(route('admin.webinar.index'));
+    }
 }

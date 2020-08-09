@@ -74,6 +74,20 @@
                     </div>
                 </form>
             </div>
+
+            <div class="col-md-12 card mt-2 pb-3">
+                <h3 class="mt-2">Usuń webinar</h3>
+                <p>Uwaga! To działanie nie będzie mogło być cofnięte!</p>
+                <form action="{{ route('admin.webinar.destroy', $webinar) }}" method="post"
+                      enctype="multipart/form-data">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger confirm" onclick="return confirm('Na pewno?')">
+                        <i class="fa fa-trash"></i>
+                        Usuń webinar
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 @endsection
