@@ -22,15 +22,27 @@
                 </div>
                 <hr/>
                 <div>
-                    Prezenter....
-                </div>
-                <hr/>
-                <div>
                     <h5>
                         <i class="fa fa-list color-second"></i> Opis wydarzenia
                     </h5>
                     <p>{!! nl2br($webinar->description) !!}</p>
                 </div>
+                <hr/>
+                @if($webinar->hasPresenter())
+                    <h5><i class="fa fa-user color-second"></i> Prowadzący </h5>
+                    <div class="d-flex">
+                        @if($webinar->presenter_description)
+                            <div class="p-1" style="flex:1;">
+                                @markdown($webinar->presenter_description)
+                            </div>
+                        @endif
+                        @if($webinar->presenter_url)
+                            <div class="p-1"  style="flex:1;">
+                                <img src="{{ $webinar->presenter_url }}" class="w-100">
+                            </div>
+                        @endif
+                    </div>
+                @endif
                 <hr/>
                 <div class="text-center">
                     <p>Webinar rozpocznie się za:</p>

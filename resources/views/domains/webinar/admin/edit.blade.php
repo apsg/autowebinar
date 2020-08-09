@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-12 card">
+            <div class="col-md-12 card pb-2">
                 <form action="{{ route('admin.webinar.patch', $webinar) }}" method="post">
                     @csrf
                     @include('domains.webinar.admin.form')

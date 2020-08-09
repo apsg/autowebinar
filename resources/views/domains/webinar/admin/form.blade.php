@@ -7,6 +7,24 @@
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 </div>
+
+<div class="form-group">
+    <label>Slug (link)</label>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text"> {{ url('/webinar') }}/</div>
+        </div>
+        <input type="text" name="slug" required
+               class="form-control"
+               value="{{ old('slug') ?? $webinar->slug ?? '' }}"
+               placeholder="slug-do-url"
+        >
+    </div>
+    @error('slug')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+</div>
+
 <div class="form-group">
     <label>Opis</label>
     @error('description')
@@ -73,4 +91,47 @@
     @error('length')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
+</div>
+
+<div class="form-group">
+    <label>Tło webinaru</label>
+    <p>Dozwolone dowolne wartości <code>background</code> CSS, np.:
+        <br/> <code>background-color: #fafafa;</code>
+        <br/> <code>background: linear-gradient(to right, red, blue);</code>
+        <br/> <code>background-image: url('http://example.com/link/to/image.jpg);</code>
+    </p>
+    <div class="input-group">
+        <input type="text" name="background"
+               class="form-control"
+               value="{{ old('background') ?? $webinar->background ?? '' }}"
+        >
+    </div>
+    @error('background')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="form-group">
+    <label>Grafika prezentera</label>
+    <input type="text" name="presenter_url"
+           class="form-control"
+           value="{{ old('presenter_url') ?? $webinar->presenter_url ?? '' }}"
+           placeholder="url"
+    >
+    @error('presenter_url')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="form-group">
+    <label>Opis prezentera</label>
+    <p>Możesz tutaj używać <a href="https://pl.wikipedia.org/wiki/Markdown" target="_blank"> Markdown </a></p>
+    @error('presenter_description')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+    <textarea name="presenter_description"
+              class="form-control"
+              placeholder="Opis prezentera."
+              style="height: 200px"
+    >{{ old('presenter_description') ?? $webinar->presenter_description ?? '' }}</textarea>
 </div>

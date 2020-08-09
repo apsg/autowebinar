@@ -19,7 +19,7 @@ Route::group(['prefix' => 'chat', 'middleware' => 'auth'], function () {
 Route::get('/', WebinarController::class . '@index')->name('webinar.index');
 
 Route::group(['prefix' => 'webinar'], function () {
-    Route::get('/{webinar}', WebinarController::class . '@show')->name('webinar.show');
+    Route::get('/{webinar:slug}', WebinarController::class . '@show')->name('webinar.show');
     Route::post('/{webinar}/subscribe', WebinarController::class . '@subscribe')
         ->name('webinar.subscribe');
     Route::get('/{webinar}/l/{token}', WebinarController::class . '@login')

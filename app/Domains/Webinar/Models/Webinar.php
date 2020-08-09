@@ -27,6 +27,10 @@ use Illuminate\Support\Collection as SupportCollection;
  * @property string                             repeat
  * @property Carbon                             created_at
  * @property Carbon                             updated_at
+ * @property string|null                        slug
+ * @property string|null                        background
+ * @property string|null                        presenter_url
+ * @property string|null                        presenter_description
  *
  * @property-read Collection|User[]             users
  * @property-read Collection|Message[]          messages
@@ -47,6 +51,10 @@ class Webinar extends Model
         'scheduled_at',
         'length',
         'repeat',
+        'slug',
+        'background',
+        'presenter_url',
+        'presenter_description',
     ];
 
     protected $dates = [
@@ -160,6 +168,12 @@ class Webinar extends Model
     public function isChatEnabled() : bool
     {
         return $this->isActive();
+    }
+
+    public function hasPresenter() : bool
+    {
+        return true;
+        return $this->presenter_url !== null || $this->presenter_description !== null;
     }
 
     public function getLink() : string
