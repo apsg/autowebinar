@@ -22,8 +22,8 @@ class CreateCallToAction extends Migration
             $table->unsignedTinyInteger('delay')->default(60);
             $table->unsignedTinyInteger('duration')->default(60);
 
-            $table->string('button_url');
-            $table->string('button_text');
+            $table->string('button_url')->nullable();
+            $table->string('button_text')->nullable();
 
             $table->unsignedBigInteger('webinar_id');
             $table->foreign('webinar_id')

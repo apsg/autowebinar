@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <p>Content</p>
     @if($webinar->isActive())
         @guest()
             @include('domains.webinar.subscribe')

@@ -6,6 +6,7 @@ Vue.component('v-video', require('./components/VVideo.vue').default);
 Vue.component('chat', require('./components/Chat.vue').default);
 Vue.component('countdown', require('vuejs-countdown').default);
 Vue.component('timer', require('./components/Timer.vue').default);
+Vue.component('cta', require('./components/CTA.vue').default);
 
 Vue.use(require('vue-moment'));
 

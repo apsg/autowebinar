@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string       description
  * @property int          delay
  * @property int          duration
- * @property string       button_url
- * @property string       button_text
+ * @property string|null  button_url
+ * @property string|null  button_text
  *
  * @property-read Webinar webinar
  */
