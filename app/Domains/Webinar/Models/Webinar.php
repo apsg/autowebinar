@@ -38,6 +38,7 @@ use Illuminate\Support\Collection as SupportCollection;
  * @property-read Collection|ScheduledMessage[] scheduled_messages
  * @property-read Collection|ScheduledMessage[] scheduled_future_messages
  * @property-read int|null                      current_time
+ * @property-read Collection|CallToAction[]     ctas
  *
  * @method static Builder future()
  * @method static Builder finished()
@@ -87,6 +88,11 @@ class Webinar extends Model
     {
         return $this->hasMany(ScheduledMessage::class)
             ->orderBy('time');
+    }
+
+    public function ctas()
+    {
+        return $this->hasMany(CallToAction::class);
     }
 
     public function getAllMessagesAttribute() : SupportCollection
