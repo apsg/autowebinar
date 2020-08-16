@@ -1,5 +1,6 @@
 <?php
 
+use App\Domains\Webinar\Controllers\AdminCtasController;
 use App\Domains\Webinar\Controllers\AdminScheduledController;
 use App\Domains\Webinar\Controllers\AdminWebinarsController;
 use Illuminate\Support\Facades\Route;
@@ -24,5 +25,10 @@ Route::group([
             Route::post('/import', AdminScheduledController::class . '@import')->name('admin.scheduled.import');
             Route::delete('/{message}', AdminScheduledController::class . '@destroy')->name('admin.scheduled.destroy');
         });
+    });
+
+    Route::group(['prefix' => 'ctas'], function () {
+        Route::post('/', AdminCtasController::class . '@store')->name('admin.cta.store');
+        Route::delete('/{cta}', AdminCtasController::class . '@destroy')->name('admin.cta.destroy');
     });
 });

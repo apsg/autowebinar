@@ -4,7 +4,7 @@ namespace App\Domains\Webinar\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- *
+ * @property int          webinar_id
  * @property string       title
  * @property string       description
  * @property int          delay
@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
 class CallToAction extends Model
 {
     protected $fillable = [
+        'webinar_id',
         'title',
         'description',
         'delay',

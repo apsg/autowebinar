@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9 col-sm-12">
+        <div class="col-md-9 col-sm-12" style="position: relative">
             @foreach($webinar->ctas as $cta)
                 <cta delay="{{ $cta->delay }}"
                      duration="{{ $cta->duration }}"

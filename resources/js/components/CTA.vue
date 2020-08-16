@@ -1,12 +1,12 @@
 <template>
     <transition name="fade">
-        <div class="cta p-3 d-flex justify-content-between align-items-center"
+        <div class="cta p-3 d-flex justify-content-center align-items-center"
              v-if="is_visible">
             <div>
                 <h3>{{ title }}</h3>
                 <p class="font-weight-bold">{{ description }}</p>
             </div>
-            <div v-if="has_button" class="">
+            <div v-if="has_button" class="pl-5">
                 <a :href="button_url" target="_blank" class="btn btn-primary">
                     {{ button_text }}
                 </a>
@@ -65,6 +65,9 @@
         min-height: 50px;
         z-index: 1000;
         color: white;
+        top: 0;
+        left: 0;
+        right: 0;
     }
 
     .fade-enter-active, .fade-leave-active {

@@ -9238,7 +9238,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.cta[data-v-1dd68df5] {\n    position: absolute;\n    background-color: rgba(125, 191, 202, 0.95);\n    width: 100%;\n    min-height: 50px;\n    z-index: 1000;\n    color: white;\n}\n.fade-enter-active[data-v-1dd68df5], .fade-leave-active[data-v-1dd68df5] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-1dd68df5], .fade-leave-to[data-v-1dd68df5] /* .fade-leave-active below version 2.1.8 */\n{\n    opacity: 0;\n}\n", ""]);
+exports.push([module.i, "\n.cta[data-v-1dd68df5] {\n    position: absolute;\n    background-color: rgba(125, 191, 202, 0.95);\n    width: 100%;\n    min-height: 50px;\n    z-index: 1000;\n    color: white;\n    top: 0;\n    left: 0;\n    right: 0;\n}\n.fade-enter-active[data-v-1dd68df5], .fade-leave-active[data-v-1dd68df5] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-1dd68df5], .fade-leave-to[data-v-1dd68df5] /* .fade-leave-active below version 2.1.8 */\n{\n    opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -68170,7 +68170,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "cta p-3 d-flex justify-content-between align-items-center"
+              "cta p-3 d-flex justify-content-center align-items-center"
           },
           [
             _c("div", [
@@ -68182,7 +68182,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _vm.has_button
-              ? _c("div", {}, [
+              ? _c("div", { staticClass: "pl-5" }, [
                   _c(
                     "a",
                     {
