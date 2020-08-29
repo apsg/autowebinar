@@ -9,7 +9,7 @@
             @include('domains.webinar.active')
         @endauth
     @elseif($webinar->isFuture())
-        @include('domains.webinar.future')
+        @include('domains.webinar.future2')
     @else
         @include('domains.webinar.finished')
     @endif

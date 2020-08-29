@@ -1,20 +1,25 @@
 <template>
-    <div class="d-flex justify-content-center timer">
-        <div class="day">
+    <div class="d-flex align-items-center justify-content-center timer color-dark-blue">
+        <div class="day" title="Dni">
             <span class="number">{{ days }}</span>
-            <div class="format">dni</div>
         </div>
-        <div class="hour">
+        <div>
+            <span class="color-dark-blue">:</span>
+        </div>
+        <div class="hour" title="Godzin">
             <span class="number">{{ hours }}</span>
-            <div class="format">godzin</div>
         </div>
-        <div class="min">
+        <div>
+            <span class="color-dark-blue">:</span>
+        </div>
+        <div class="min" title="Minut">
             <span class="number">{{ minutes }}</span>
-            <div class="format">minut</div>
         </div>
-        <div class="sec">
+        <div>
+            <span class="color-dark-blue">:</span>
+        </div>
+        <div class="sec" title="Sekund">
             <span class="number">{{ seconds }}</span>
-            <div class="format">sekund</div>
         </div>
     </div>
 </template>
@@ -85,7 +90,8 @@
             font-weight: 500;
             text-align: center;
             margin: 0 5px;
-            color: #240b36;
+            font-family: DINPro-Bold;
+            line-height: 60px;
 
             .format {
                 font-weight: 300;
@@ -96,12 +102,11 @@
         }
 
         .number {
-            background: #240b36;
-            color: #fff;
-            padding: 0 5px;
-            border-radius: 5px;
+            background: #fff;
+            border-radius: 10px;
             display: inline-block;
             width: 60px;
+            height: 60px;
             text-align: center;
         }
 

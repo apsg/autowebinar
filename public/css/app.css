@@ -34,7 +34,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Source Serif Pro", "Nunito", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +66,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Source Serif Pro", "Nunito", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6400,7 +6400,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Source Serif Pro", "Nunito", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6525,7 +6525,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Source Serif Pro", "Nunito", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -13972,15 +13972,33 @@ a.text-dark:focus {
   clip: auto;
 }
 
+@font-face {
+  font-family: "DINPro-Bold";
+  src: url(/fonts/DINPro-Bold13934.eot?5fc6ea8757522cb910c004bd4a4e976b);
+  /* IE9 Compat Modes */
+  src: url(/fonts/DINPro-Bold13934.eot?5fc6ea8757522cb910c004bd4a4e976b) format("embedded-opentype"), url(/fonts/DINPro-Bold13934.otf?05ad4c5c0f6797ee61d8921d688b938c) format("opentype"), url(/fonts/DINPro-Bold13934.svg?9b5cd9a15c4b9dff2dee392821916fc1) format("svg"), url(/fonts/DINPro-Bold13934.ttf?e44aba4f44c2f489314f4a6b2645c33d) format("truetype"), url(/fonts/DINPro-Bold13934.woff?05ff96e6594c57718328c58d9b8194e8) format("woff"), url(/fonts/DINPro-Bold13934.woff2?7272b1fec139fd47bffc45f081716e08) format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   background: #c31432;
   /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #240b36, #c31432);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url(/images/tlo-strony.png?0373acb1c6e39123e4d458039d823cfe);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Source Serif Pro", "Nunito", sans-serif;
+  min-height: 100%;
+}
+
+.color-white {
+  color: white;
 }
 
 .color-main {
@@ -13989,5 +14007,79 @@ body {
 
 .color-second {
   color: #c31432;
+}
+
+.color-light-blue {
+  color: #54c4ff;
+}
+
+.color-dark-blue {
+  color: #4a82c7;
+}
+
+.color-yellow {
+  color: #FBAE38;
+}
+
+.bg-light-blue {
+  background-color: #80c2ff;
+}
+
+.font-family-din {
+  font-family: "DINPro-Bold";
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-30 {
+  font-size: 30px;
+}
+
+.font-40 {
+  font-size: 40px;
+}
+
+.font-50 {
+  font-size: 50px;
+}
+
+.font-60 {
+  font-size: 60px;
+}
+
+.h-50p {
+  height: 50px;
+}
+
+.h-60p {
+  height: 60px;
+}
+
+.lh-50 {
+  line-height: 50px;
+}
+
+.lh-60 {
+  line-height: 60px;
+}
+
+.lh-1 {
+  line-height: 1em;
+}
+
+.lh-1p1 {
+  line-height: 1.1em;
+}
+
+.rounded-left-big {
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+}
+
+.rounded-right-big {
+  border-top-right-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
 }
 
