@@ -2,9 +2,8 @@
     <div class="row chat-container">
         <div class="col-md-12 ">
             <div class="panel panel-default">
-                <div class="panel-heading">Rozmowa</div>
                 <div class="panel-body" ref="chat-panel" id="scroll">
-                    <chat-messages :messages="messages" ref="chat-messages"></chat-messages>
+                    <chat-messages :messages="messages" :user="user" ref="chat-messages"></chat-messages>
                 </div>
                 <div class="panel-footer pt-2">
                     <chat-form
@@ -14,6 +13,7 @@
                 </div>
             </div>
         </div>
+        <div class="overflow">&nbsp;</div>
     </div>
 </template>
 
@@ -102,14 +102,28 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
     .chat-container {
         background-color: rgba(255, 255, 255, 0.5);
+        position: relative;
+
+        .overflow{
+            position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, white, transparent);
+            z-index: 1000;
+        }
     }
 
     .panel-body {
         overflow-y: scroll;
-        height: 480px;
+        height: 400px;
+        overflow-x: hidden;
     }
+
+
 </style>

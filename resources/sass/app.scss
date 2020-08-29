@@ -63,6 +63,10 @@ body {
     background-color: $bg-blue;
 }
 
+.bg-light-gray{
+    background-color: ;
+}
+
 .font-family-din {
     font-family: 'DINPro-Bold';
 }
@@ -119,4 +123,26 @@ body {
 .rounded-right-big {
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
+}
+
+.nav-tabs {
+    border-bottom: transparent;
+
+    .nav-link {
+        background-color: #ececec;
+        color: #a3a3a3;
+        font-family: 'DINPro-Bold';
+        margin-right: 10px;
+        min-width: 100px;
+
+        &.active {
+            background-color: $light-blue;
+            color: white;
+        }
+
+        .icon{
+            float: right;
+        }
+    }
+
 }

@@ -13,6 +13,7 @@ class MessageTransformer extends TransformerAbstract
             'name'      => $message->user->name,
             'message'   => $message->message,
             'timestamp' => $message->created_at,
+            'is_admin'  => $message->user->is_admin,
         ];
     }
 }

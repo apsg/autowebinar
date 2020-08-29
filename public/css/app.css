@@ -14083,3 +14083,24 @@ body {
   border-bottom-right-radius: 1rem !important;
 }
 
+.nav-tabs {
+  border-bottom: transparent;
+}
+
+.nav-tabs .nav-link {
+  background-color: #ececec;
+  color: #a3a3a3;
+  font-family: "DINPro-Bold";
+  margin-right: 10px;
+  min-width: 100px;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #54c4ff;
+  color: white;
+}
+
+.nav-tabs .nav-link .icon {
+  float: right;
+}
+

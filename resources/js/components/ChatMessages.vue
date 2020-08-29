@@ -1,13 +1,10 @@
 <template>
     <ul class="chat">
-        <li class="left clearfix" v-for="message in messages">
-            <div class="chat-body clearfix">
-                <div class="header">
-                    <strong class="primary-font">
-                        {{ message.name }}
-                    </strong>
-                    <span class="small pull-right pr-2"> {{ message.timestamp | moment('YYYY-MM-DD HH:mm:ss') }}</span>
-                </div>
+        <li class="clearfix px-3" :class="classForMessage(message)" v-for="message in messages">
+            <div class="name small" >
+                {{ (message.name == user.name) ? "Ty" : message.name  }}
+            </div>
+            <div class="chat-body clearfix px-2 py-1">
                 <p>
                     {{ message.message }}
                 </p>
@@ -18,7 +15,23 @@
 
 <script>
     export default {
-        props: ['messages'],
+        props: ['messages', 'user'],
+
+        methods:{
+            classForMessage(message){
+                let classes = [];
+
+                if(message.is_admin) {
+                    classes.push('admin');
+                }
+
+                if(message.name == this.user.name){
+                    classes.push('you');
+                }
+
+                return classes.join(' ');
+            }
+        }
     };
 </script>
 
@@ -28,12 +41,46 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        font-family: 'DINPro-Bold';
+        text-align: right;
+
+        li{
+            padding-bottom: 5px;
+        }
+
+        .chat-body{
+            max-width: 80%;
+            background-color: #e1e5ee;
+            color: #606060;
+            text-align: left;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .name{
+            color: #6f6f6f;
+            font-weight: 400;
+        }
     }
 
-    .chat li {
-        margin-bottom: 10px;
-        padding-bottom: 5px;
-        border-bottom: 1px dotted #B3A9A9;
+    .you{
+        .chat-body{
+            border-bottom: 2px solid #54c4ff;
+        }
+    }
+
+    .admin{
+        text-align: left;
+
+        .name{
+            color: #54c4ff;
+            text-align: left;
+        }
+
+        .chat-body{
+            background-color: #54c4ff;
+            color: white;
+        }
     }
 
     .small {
