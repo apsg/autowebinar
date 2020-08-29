@@ -14025,6 +14025,10 @@ body {
   background-color: #80c2ff;
 }
 
+.bg-light-gray {
+  background-color: #f8f8f8;
+}
+
 .font-family-din {
   font-family: "DINPro-Bold";
 }
