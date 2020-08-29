@@ -31,6 +31,7 @@ use Illuminate\Support\Collection as SupportCollection;
  * @property string|null                        background
  * @property string|null                        presenter_url
  * @property string|null                        presenter_description
+ * @property string|null                        logo
  *
  * @property-read Collection|User[]             users
  * @property-read Collection|Message[]          messages
@@ -56,6 +57,7 @@ class Webinar extends Model
         'background',
         'presenter_url',
         'presenter_description',
+        'logo',
     ];
 
     protected $dates = [

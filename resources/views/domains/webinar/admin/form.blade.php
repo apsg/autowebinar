@@ -135,3 +135,15 @@
               style="height: 200px"
     >{{ old('presenter_description') ?? $webinar->presenter_description ?? '' }}</textarea>
 </div>
+
+<div class="form-group">
+    <label>Logo</label>
+    <input type="text" name="logo"
+           class="form-control"
+           value="{{ old('logo') ?? $webinar->logo ?? '' }}"
+           placeholder="url"
+    >
+    @error('logo')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+</div>
