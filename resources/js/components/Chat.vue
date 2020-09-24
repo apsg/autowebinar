@@ -1,6 +1,7 @@
 <template>
     <div class="row chat-container">
         <div class="col-md-12 ">
+            Time: {{ time }}
             <div class="panel panel-default">
                 <div class="panel-body" ref="chat-panel" id="scroll">
                     <chat-messages :messages="messages" :user="user" ref="chat-messages"></chat-messages>
