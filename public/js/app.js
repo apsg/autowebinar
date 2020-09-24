@@ -4681,6 +4681,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Timer",
   props: ['starttime'],
@@ -9271,7 +9289,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".timer[data-v-54f9552c] {\n  font-size: 20px;\n  text-align: center;\n}\n.timer .day[data-v-54f9552c], .timer .hour[data-v-54f9552c], .timer .min[data-v-54f9552c], .timer .sec[data-v-54f9552c] {\n  font-size: 30px;\n  display: inline-block;\n  font-weight: 500;\n  text-align: center;\n  margin: 0 5px;\n  font-family: DINPro-Bold;\n  line-height: 60px;\n}\n.timer .day .format[data-v-54f9552c], .timer .hour .format[data-v-54f9552c], .timer .min .format[data-v-54f9552c], .timer .sec .format[data-v-54f9552c] {\n  font-weight: 300;\n  font-size: 14px;\n  opacity: 0.8;\n  width: 60px;\n}\n.timer .number[data-v-54f9552c] {\n  background: #fff;\n  border-radius: 10px;\n  display: inline-block;\n  width: 60px;\n  height: 60px;\n  text-align: center;\n}\n.timer .message[data-v-54f9552c] {\n  font-size: 14px;\n  font-weight: 400;\n  margin-top: 5px;\n}\n.timer .status-tag[data-v-54f9552c] {\n  width: 270px;\n  margin: 10px auto;\n  padding: 8px 0;\n  font-weight: 500;\n  color: #000;\n  text-align: center;\n  border-radius: 15px;\n}\n.timer .status-tag.upcoming[data-v-54f9552c] {\n  background-color: lightGreen;\n}\n.timer .status-tag.running[data-v-54f9552c] {\n  background-color: gold;\n}\n.timer .status-tag.expired[data-v-54f9552c] {\n  background-color: silver;\n}", ""]);
+exports.push([module.i, ".timer[data-v-54f9552c] {\n  font-size: 20px;\n  text-align: center;\n}\n.timer .day[data-v-54f9552c], .timer .hour[data-v-54f9552c], .timer .min[data-v-54f9552c], .timer .sec[data-v-54f9552c] {\n  font-size: 30px;\n  display: inline-block;\n  font-weight: 500;\n  text-align: center;\n  margin: 0 5px;\n  font-family: DINPro-Bold;\n}\n.timer .day .format[data-v-54f9552c], .timer .hour .format[data-v-54f9552c], .timer .min .format[data-v-54f9552c], .timer .sec .format[data-v-54f9552c] {\n  font-weight: 300;\n  font-size: 14px;\n  opacity: 0.8;\n  width: 60px;\n}\n.timer .colon[data-v-54f9552c] {\n  min-height: 60px;\n  line-height: 60px;\n}\n.timer .suffix[data-v-54f9552c] {\n  font-size: 12px;\n}\n.timer .number[data-v-54f9552c] {\n  background: #fff;\n  border-radius: 10px;\n  display: inline-block;\n  width: 60px;\n  height: 60px;\n  text-align: center;\n  line-height: 60px;\n}\n.timer .message[data-v-54f9552c] {\n  font-size: 14px;\n  font-weight: 400;\n  margin-top: 5px;\n}\n.timer .status-tag[data-v-54f9552c] {\n  width: 270px;\n  margin: 10px auto;\n  padding: 8px 0;\n  font-weight: 500;\n  color: #000;\n  text-align: center;\n  border-radius: 15px;\n}\n.timer .status-tag.upcoming[data-v-54f9552c] {\n  background-color: lightGreen;\n}\n.timer .status-tag.running[data-v-54f9552c] {\n  background-color: gold;\n}\n.timer .status-tag.expired[data-v-54f9552c] {\n  background-color: silver;\n}", ""]);
 
 // exports
 
@@ -69036,29 +69054,45 @@ var render = function() {
     "div",
     {
       staticClass:
-        "d-flex align-items-center justify-content-center timer color-dark-blue"
+        "d-flex align-items-start justify-content-center timer color-dark-blue"
     },
     [
-      _c("div", { staticClass: "day", attrs: { title: "Dni" } }, [
-        _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.days))])
+      _c("div", [
+        _c("div", { staticClass: "day", attrs: { title: "Dni" } }, [
+          _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.days))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "suffix" }, [_vm._v("Dni")])
       ]),
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "hour", attrs: { title: "Godzin" } }, [
-        _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.hours))])
+      _c("div", [
+        _c("div", { staticClass: "hour", attrs: { title: "Godzin" } }, [
+          _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.hours))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "suffix" }, [_vm._v("Godzin")])
       ]),
       _vm._v(" "),
       _vm._m(1),
       _vm._v(" "),
-      _c("div", { staticClass: "min", attrs: { title: "Minut" } }, [
-        _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.minutes))])
+      _c("div", [
+        _c("div", { staticClass: "min", attrs: { title: "Minut" } }, [
+          _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.minutes))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "suffix" }, [_vm._v("Minut")])
       ]),
       _vm._v(" "),
       _vm._m(2),
       _vm._v(" "),
-      _c("div", { staticClass: "sec", attrs: { title: "Sekund" } }, [
-        _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.seconds))])
+      _c("div", [
+        _c("div", { staticClass: "sec", attrs: { title: "Sekund" } }, [
+          _c("span", { staticClass: "number" }, [_vm._v(_vm._s(_vm.seconds))])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "suffix" }, [_vm._v("Sekund")])
       ])
     ]
   )
@@ -69069,7 +69103,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("span", { staticClass: "color-dark-blue" }, [_vm._v(":")])
+      _c("div", { staticClass: "colon" }, [
+        _c("span", { staticClass: "color-dark-blue" }, [_vm._v(":")])
+      ])
     ])
   },
   function() {
@@ -69077,7 +69113,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("span", { staticClass: "color-dark-blue" }, [_vm._v(":")])
+      _c("div", { staticClass: "colon" }, [
+        _c("span", { staticClass: "color-dark-blue" }, [_vm._v(":")])
+      ])
     ])
   },
   function() {
@@ -69085,7 +69123,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("span", { staticClass: "color-dark-blue" }, [_vm._v(":")])
+      _c("div", { staticClass: "colon" }, [
+        _c("span", { staticClass: "color-dark-blue" }, [_vm._v(":")])
+      ])
     ])
   }
 ]

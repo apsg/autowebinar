@@ -14111,8 +14111,16 @@ body {
   font-family: 'DINPro-Bold';
 }
 
+.font-family-ssp {
+  font-family: 'Source Serif Pro';
+}
+
 .font-20 {
   font-size: 20px;
+}
+
+.font-25 {
+  font-size: 25px;
 }
 
 .font-30 {
@@ -14129,6 +14137,10 @@ body {
 
 .font-60 {
   font-size: 60px;
+}
+
+.h-40p {
+  height: 40px;
 }
 
 .h-50p {
@@ -14153,6 +14165,10 @@ body {
 
 .lh-1p1 {
   line-height: 1.1em;
+}
+
+.lh-1p2 {
+  line-height: 1.2em;
 }
 
 .rounded-left-big {
