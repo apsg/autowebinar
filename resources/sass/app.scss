@@ -3,23 +3,11 @@
 
 // Variables
 @import 'variables';
+@import 'fonts';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "~font-awesome/scss/font-awesome";
-
-@font-face {
-    font-family: "DINPro-Bold";
-    src: url("./fonts/DINPro-Bold13934.eot"); /* IE9 Compat Modes */
-    src: url("./fonts/DINPro-Bold13934.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("./fonts/DINPro-Bold13934.otf") format("opentype"), /* Open Type Font */
-    url("./fonts/DINPro-Bold13934.svg") format("svg"), /* Legacy iOS */
-    url("./fonts/DINPro-Bold13934.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("./fonts/DINPro-Bold13934.woff") format("woff"), /* Modern Browsers */
-    url("./fonts/DINPro-Bold13934.woff2") format("woff2"); /* Modern Browsers */
-    font-weight: normal;
-    font-style: normal;
-}
 
 html {
     height: 100%;

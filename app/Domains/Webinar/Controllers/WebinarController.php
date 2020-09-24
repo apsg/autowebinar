@@ -26,7 +26,7 @@ class WebinarController extends Controller
     {
         if (! app()->environment('production')) {
             $webinar->update([
-                'scheduled_at' => Carbon::now(),
+                'scheduled_at' => Carbon::now()->subSeconds(5),
             ]);
         }
 
