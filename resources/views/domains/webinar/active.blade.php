@@ -43,8 +43,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <chat :user="{{ auth()->user() }}"
-                          webinar="{{ $webinar->id }}"
-                          :debug="{{ app()->environment('local') }}">
+                          webinar="{{ $webinar->id }}">
                     </chat>
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
