@@ -40,7 +40,8 @@
                                         <input required class="form-control" type="text" name="name" placeholder="Nick">
                                     </div>
                                     <div class="col-md-3">
-                                        <input required class="form-control" type="text" name="message" placeholder="Wiadomość">
+                                        <input required class="form-control" type="text" name="message"
+                                               placeholder="Wiadomość">
                                     </div>
                                     <div class="col-md-3">
                                         <button class="btn btn-primary">
@@ -156,7 +157,22 @@
 
                     </form>
                 </div>
+            </div>
 
+            <div class="col-md-12 card mt-2 pb-3">
+                <h5>Usuń wszystkie wiadomości z webinaru</h5>
+                <p>Usuń wszystkie wiadomości z webinaru. Usuwa tylko wiadomości użytkowników, wiadomości zaplanowane nie zostaną usunięte.</p>
+                <p>Jeśli korzystasz z opcji powtarzania webinaru, to wiadomości zostaną usunięte automatycznie przy automatycznej zmianie daty.</p>
+
+                <form action="{{ route('admin.webinar.delete_messages', $webinar) }}" method="post"
+                      enctype="multipart/form-data">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger confirm" onclick="return confirm('Na pewno?')">
+                        <i class="fa fa-trash"></i>
+                        Usuń wszystkie wiadomości użytkowników
+                    </button>
+                </form>
 
             </div>
 

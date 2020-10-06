@@ -6,7 +6,7 @@ use App\Domains\Webinar\Controllers\AdminWebinarsController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
-    'prefix'      => 'admin',
+    'prefix'     => 'admin',
     'middleware' => [
         'auth',
         'admin',
@@ -19,6 +19,9 @@ Route::group([
         Route::get('/{webinar}', AdminWebinarsController::class . '@edit')->name('admin.webinar.edit');
         Route::post('/{webinar}', AdminWebinarsController::class . '@patch')->name('admin.webinar.patch');
         Route::delete('/{webinar}', AdminWebinarsController::class . '@destroy')->name('admin.webinar.destroy');
+
+        Route::delete('/{webinar}/delete_messages', AdminWebinarsController::class . '@deleteMessages')
+            ->name('admin.webinar.delete_messages');
 
         Route::group(['prefix' => '/{webinar}/scheduled'], function () {
             Route::post('/', AdminScheduledController::class . '@store')->name('admin.scheduled.store');

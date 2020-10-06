@@ -51,4 +51,13 @@ class AdminWebinarsController extends Controller
 
         return redirect(route('admin.webinar.index'));
     }
+
+    public function deleteMessages(Webinar $webinar)
+    {
+        $webinar->messages()->delete();
+
+        flash('Usunięto wiadomości');
+
+        return back();
+    }
 }
