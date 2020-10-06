@@ -16,6 +16,7 @@ class RefreshWebinarsCommand extends Command
         /** @var Webinar $webinar */
         foreach ($webinars as $webinar) {
             $this->updateDate($webinar);
+            $this->clearChat($webinar);
         }
     }
 
@@ -52,5 +53,10 @@ class RefreshWebinarsCommand extends Command
                 'repeat' => null,
             ]);
         }
+    }
+
+    private function clearChat(Webinar $webinar)
+    {
+        $webinar->messages()->delete();
     }
 }
