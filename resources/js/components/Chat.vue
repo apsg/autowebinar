@@ -3,7 +3,7 @@
         <div class="col-md-12 ">
 <!--            <span>Time: {{ time }}</span>-->
             <div class="panel panel-default">
-                <div class="panel-body" ref="chat-panel" id="scroll">
+                <div class="panel-body" ref="chatpanel" id="scroll">
                     <chat-messages :messages="messages" :user="user" ref="chat-messages"></chat-messages>
                 </div>
                 <div class="panel-footer pt-2">
@@ -67,12 +67,11 @@
 
             addMessage(message) {
                 this.messages.push(message);
+                this.scrollBottom();
 
                 axios.post('/webinar/' + this.webinar + '/messages', message).then(response => {
                     console.log(response.data);
                 });
-
-                this.scrollBottom();
             },
 
             onResize(event) {
@@ -80,8 +79,7 @@
             },
 
             scrollBottom() {
-                var el = document.getElementById('scroll');
-                el.scrollTop = el.scrollHeight;
+                this.$refs.chatpanel.scrollTop = this.$refs.chatpanel.scrollHeight;
             },
 
             tick() {
@@ -98,6 +96,8 @@
                         this.messages.push(message);
                         this.scheduled.splice(this.scheduled.indexOf(message), 1);
                     });
+
+                this.scrollBottom();
             }
         }
     }
