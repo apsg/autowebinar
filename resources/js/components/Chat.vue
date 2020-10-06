@@ -1,7 +1,7 @@
 <template>
     <div class="row chat-container">
         <div class="col-md-12 ">
-            Time: {{ time }}
+            <span v-if="debug">Time: {{ time }}</span>
             <div class="panel panel-default">
                 <div class="panel-body" ref="chat-panel" id="scroll">
                     <chat-messages :messages="messages" :user="user" ref="chat-messages"></chat-messages>
@@ -23,7 +23,7 @@
     export default {
         name: "Chat",
 
-        props: ['user', 'webinar'],
+        props: ['user', 'webinar', 'debug'],
 
         data() {
             return {

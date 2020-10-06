@@ -115,9 +115,7 @@
                             <div class="form-group col-6">
                                 <label>Opóźnienie [s]</label>
                                 <p class="alert alert-info">
-                                    Uwaga: opóźnienie liczone jest od momentu rozpoczęcia oglądania przez użytkownika,
-                                    nie
-                                    od chwili startu webinara.
+                                    Uwaga: opóźnienie liczone jest od chwili startu webinara.
                                 </p>
                                 <input class="form-control"
                                        min="0"

@@ -4424,7 +4424,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: ['delay', 'duration', 'title', 'description', 'button_url', 'button_text'],
   mounted: function mounted() {
-    setTimeout(this.show, this.delay * 1000);
+    if (this.delay > 0) {
+      setTimeout(this.show, this.delay * 1000);
+    }
   },
   methods: {
     show: function show() {
@@ -4475,7 +4477,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Chat",
-  props: ['user', 'webinar'],
+  props: ['user', 'webinar', 'debug'],
   data: function data() {
     return {
       messages: [],
@@ -68868,7 +68870,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row chat-container" }, [
     _c("div", { staticClass: "col-md-12 " }, [
-      _vm._v("\n        Time: " + _vm._s(_vm.time) + "\n        "),
+      _vm.debug ? _c("span", [_vm._v("Time: " + _vm._s(_vm.time))]) : _vm._e(),
+      _vm._v(" "),
       _c("div", { staticClass: "panel panel-default" }, [
         _c(
           "div",
