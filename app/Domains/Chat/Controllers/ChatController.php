@@ -21,7 +21,7 @@ class ChatController extends Controller
 
     public function fetchMessages(Webinar $webinar)
     {
-        $messages = $webinar->all_messages;
+        $messages = $webinar->all_messages->toArray();
         $scheduled = FractalHelper::toArray(
             $webinar->scheduled_future_messages,
             new ScheduledMessageTransformer()
