@@ -35,7 +35,6 @@
               required
               style="height: 300px;"
     >{{ old('description') ?? $webinar->description ?? '' }}</textarea>
-
 </div>
 <div class="form-group">
     <label>Link do vimeo</label>
@@ -50,11 +49,9 @@
 </div>
 <div class="form-group">
     <label>Data i godzina emisji</label>
-{{--    <input type="datetime-local" name="scheduled_at" required--}}
-{{--           class="form-control"--}}
-{{--           value="{{ old('scheduled_at') ?? (isset($webinar) ? $webinar->scheduled_at->toDateTimeLocalString() : '' ) }}"--}}
-{{--    >--}}
-    <datetime-picker name="scheduled_at" date="{{ $webinar->scheduled_at->toISOString() }}"></datetime-picker>
+    <datetime-picker name="scheduled_at"
+                     date="{{ isset($webinar) ? $webinar->scheduled_at->toISOString() : '' }}">
+    </datetime-picker>
     @error('scheduled_at')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
