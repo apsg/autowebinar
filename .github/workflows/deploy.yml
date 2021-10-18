@@ -40,7 +40,7 @@ jobs:
           privateKey: ${{ secrets.KEY }}
           command: |
             cd ${{ secrets.TARGET_INAUKA }}
-            composer install --ignore-platform-reqs
+            composer80 install --ignore-platform-reqs
             php80 artisan migrate --force
             php80 artisan cache:clear
             php80 artisan view:cache
@@ -63,7 +63,7 @@ jobs:
           privateKey: ${{ secrets.KEY }}
           command: |
             cd ${{ secrets.TARGET_P30 }}
-            composer install --ignore-platform-reqs
+            composer80 install --ignore-platform-reqs
             php80 artisan migrate --force
             php80 artisan cache:clear
             php80 artisan view:cache
