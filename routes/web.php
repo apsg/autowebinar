@@ -16,7 +16,7 @@ Route::group(['prefix' => 'chat', 'middleware' => 'auth'], function () {
     Route::post('messages', ChatController::class . '@sendMessage');
 });
 
-Route::get('/', WebinarController::class . '@index')->name('webinar.index');
+//Route::get('/', WebinarController::class . '@index')->name('webinar.index');
 
 Route::group(['prefix' => 'webinar'], function () {
     Route::get('/{webinar:slug}', WebinarController::class . '@show')->name('webinar.show');

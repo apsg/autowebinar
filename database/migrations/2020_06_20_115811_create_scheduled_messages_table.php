@@ -25,7 +25,7 @@ class CreateScheduledMessagesTable extends Migration
             $table->string('name');
             $table->text('message');
 
-            $table->tinyInteger('time');
+            $table->unsignedInteger('time');
 
             $table->timestamps();
         });

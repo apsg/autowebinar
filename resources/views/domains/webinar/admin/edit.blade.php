@@ -120,7 +120,6 @@
                                 </p>
                                 <input class="form-control"
                                        min="0"
-                                       max="1000"
                                        type="number" name="delay" required
                                        placeholder="czas w sekundach"
                                 />

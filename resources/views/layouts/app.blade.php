@@ -24,7 +24,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light ">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="#">
                 @if(isset($webinar) && !empty($webinar->logo))
                     <img src="{{ $webinar->logo }}" class="mh-100"/>
                 @else
