@@ -23,7 +23,30 @@ jobs:
         run: npm install
       - name: Build assets
         run: npm run prod
-      - name: Deploy to Server
+      - name: Deploy to iNauka
+        uses: easingthemes/ssh-deploy@v2.1.6
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          ARGS: "-rltgoDzvO"
+          SOURCE: "/"
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USER }}
+          TARGET: ${{ secrets.TARGET_INAUKA }}
+          EXCLUDE: "/node_modules/, /.idea/, /.git/, /vendor/, /.github/"
+      - name: Composer and migrations
+        uses: JimCronqvist/action-ssh@master
+        with:
+          hosts: ${{ secrets.USER }}@${{ secrets.HOST }}
+          privateKey: ${{ secrets.KEY }}
+          command: |
+            cd ${{ secrets.TARGET_INAUKA }}
+            composer74 install
+            php80 artisan migrate --force
+            php80 artisan cache:clear
+            php80 artisan view:cache
+            php80 artisan config:cache
+            php80 artisan storage:link
+      - name: Deploy to projekt30
         uses: easingthemes/ssh-deploy@v2.1.6
         env:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
@@ -33,8 +56,6 @@ jobs:
           REMOTE_USER: ${{ secrets.USER }}
           TARGET: ${{ secrets.TARGET_P30 }}
           EXCLUDE: "/node_modules/, /.idea/, /.git/, /vendor/, /.github/"
-      - name: Creating .env file should go here
-        run: echo "Creating env file..."
       - name: Composer and migrations
         uses: JimCronqvist/action-ssh@master
         with:
