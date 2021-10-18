@@ -42,7 +42,7 @@ jobs:
           privateKey: ${{ secrets.KEY }}
           command: |
             cd ${{ secrets.TARGET_INAUKA }}
-            composer install
+            composer74 install
             php80 artisan migrate --force
             php80 artisan cache:clear
             php80 artisan view:cache
