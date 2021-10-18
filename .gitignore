@@ -24,6 +24,6 @@ Homestead.json
 
 .idea/
 
-.build/php-cs-fixer/
+.github/php-cs-fixer/
 
 .php_cs.cache
