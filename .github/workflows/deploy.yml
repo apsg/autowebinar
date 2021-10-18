@@ -33,19 +33,19 @@ jobs:
           REMOTE_USER: ${{ secrets.USER }}
           TARGET: ${{ secrets.TARGET_INAUKA }}
           EXCLUDE: "/node_modules/, /.idea/, /.git/, /vendor/, /.github/"
-      - name: Composer and migrations
-        uses: JimCronqvist/action-ssh@master
-        with:
-          hosts: ${{ secrets.USER }}@${{ secrets.HOST }}
-          privateKey: ${{ secrets.KEY }}
-          command: |
-            cd ${{ secrets.TARGET_INAUKA }}
-            composer80 install --ignore-platform-reqs
-            php80 artisan migrate --force
-            php80 artisan cache:clear
-            php80 artisan view:cache
-            php80 artisan config:cache
-            php80 artisan storage:link
+#      - name: Composer and migrations
+#        uses: JimCronqvist/action-ssh@master
+#        with:
+#          hosts: ${{ secrets.USER }}@${{ secrets.HOST }}
+#          privateKey: ${{ secrets.KEY }}
+#          command: |
+#            cd ${{ secrets.TARGET_INAUKA }}
+#            composer80 install --ignore-platform-reqs
+#            php80 artisan migrate --force
+#            php80 artisan cache:clear
+#            php80 artisan view:cache
+#            php80 artisan config:cache
+#            php80 artisan storage:link
       - name: Deploy to projekt30
         uses: easingthemes/ssh-deploy@v2.1.6
         env:
@@ -56,16 +56,16 @@ jobs:
           REMOTE_USER: ${{ secrets.USER }}
           TARGET: ${{ secrets.TARGET_P30 }}
           EXCLUDE: "/node_modules/, /.idea/, /.git/, /vendor/, /.github/"
-      - name: Composer and migrations
-        uses: JimCronqvist/action-ssh@master
-        with:
-          hosts: ${{ secrets.USER }}@${{ secrets.HOST }}
-          privateKey: ${{ secrets.KEY }}
-          command: |
-            cd ${{ secrets.TARGET_P30 }}
-            composer80 install --ignore-platform-reqs
-            php80 artisan migrate --force
-            php80 artisan cache:clear
-            php80 artisan view:cache
-            php80 artisan config:cache
-            php80 artisan storage:link
+#      - name: Composer and migrations
+#        uses: JimCronqvist/action-ssh@master
+#        with:
+#          hosts: ${{ secrets.USER }}@${{ secrets.HOST }}
+#          privateKey: ${{ secrets.KEY }}
+#          command: |
+#            cd ${{ secrets.TARGET_P30 }}
+#            composer80 install --ignore-platform-reqs
+#            php80 artisan migrate --force
+#            php80 artisan cache:clear
+#            php80 artisan view:cache
+#            php80 artisan config:cache
+#            php80 artisan storage:link
