@@ -38,7 +38,6 @@
 
             Echo.private('chat.' + this.webinar)
                 .listen('.chat.message', (e) => {
-                    console.log(e);
                     this.messages.push({
                         message: e.message.message,
                         name: e.user.name,

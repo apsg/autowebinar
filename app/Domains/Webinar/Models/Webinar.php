@@ -99,7 +99,17 @@ class Webinar extends Model
 
     public function getAllMessagesAttribute() : SupportCollection
     {
-        $messages = $this->getTransformedMessages();
+        $messages = $this->getTransformedMessagesForUser();
+        $scheduled = $this->getTransformedScheduledMessages();
+
+        $allMessages = collect($messages)->push(...$scheduled);
+
+        return $allMessages->sortBy('timestamp');
+    }
+
+    public function getMessagesForUser(User $user = null) : SupportCollection
+    {
+        $messages = $this->getTransformedMessagesForUser($user);
         $scheduled = $this->getTransformedScheduledMessages();
 
         $allMessages = collect($messages)->push(...$scheduled);
@@ -114,9 +124,17 @@ class Webinar extends Model
             ->get();
     }
 
-    public function getTransformedMessages() : array
+    public function getTransformedMessagesForUser(User $user = null) : array
     {
-        return FractalHelper::toArray($this->messages, new MessageTransformer());
+        if ($user === null) {
+            return [];
+        }
+
+        $messages = $this->messages()
+            ->where('user_id', $user->id)
+            ->get();
+
+        return FractalHelper::toArray($messages, new MessageTransformer());
     }
 
     public function getTransformedScheduledMessages() : array

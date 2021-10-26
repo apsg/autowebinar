@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Domains\Chat\Controllers;
 
 use App\Domains\Chat\Events\MessageSentEvent;
@@ -21,7 +20,9 @@ class ChatController extends Controller
 
     public function fetchMessages(Webinar $webinar)
     {
-        $messages = $webinar->all_messages->toArray();
+        $messages = $webinar
+            ->getMessagesForUser(Auth::user())
+            ->toArray();
         $scheduled = FractalHelper::toArray(
             $webinar->scheduled_future_messages,
             new ScheduledMessageTransformer()
@@ -33,7 +34,7 @@ class ChatController extends Controller
 
     public function sendMessage(Webinar $webinar, Request $request)
     {
-        if (! $webinar->isChatEnabled()) {
+        if (!$webinar->isChatEnabled()) {
             return response()->json(['status' => 'Webinar ended'], 401);
         }
 
