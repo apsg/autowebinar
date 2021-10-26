@@ -149,5 +149,22 @@ body {
             float: right;
         }
     }
+}
 
+.mobile-hide {
+    display: block !important;
+}
+
+.mobile-show {
+    display: none !important;
+}
+
+@media (max-width: 991.98px) {
+    .mobile-hide {
+        display: none !important;
+    }
+
+    .mobile-show {
+        display: block !important;
+    }
 }
