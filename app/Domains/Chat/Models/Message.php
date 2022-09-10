@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Domains\Chat\Models;
 
 use App\Domains\Webinar\Models\Webinar;
