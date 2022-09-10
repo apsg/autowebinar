@@ -6,7 +6,7 @@ use League\Fractal\TransformerAbstract;
 
 class MessageTransformer extends TransformerAbstract
 {
-    public function transform(Message $message) : array
+    public function transform(Message $message): array
     {
         return [
             'id'        => $message->id,

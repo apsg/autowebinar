@@ -17,7 +17,7 @@ class WebinarSubscriptionRepository
         $user->webinars()->attach($webinar->id);
     }
 
-    public function isUserSubscribed(User $user, Webinar $webinar) : bool
+    public function isUserSubscribed(User $user, Webinar $webinar): bool
     {
         return DB::table('user_webinar')
             ->where('user_id', $user->id)

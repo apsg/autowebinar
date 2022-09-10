@@ -32,7 +32,6 @@ use Illuminate\Support\Collection as SupportCollection;
  * @property string|null                        presenter_url
  * @property string|null                        presenter_description
  * @property string|null                        logo
- *
  * @property-read Collection|User[]             users
  * @property-read Collection|Message[]          messages
  * @property-read array                         all_messages
@@ -97,7 +96,7 @@ class Webinar extends Model
         return $this->hasMany(CallToAction::class);
     }
 
-    public function getAllMessagesAttribute() : SupportCollection
+    public function getAllMessagesAttribute(): SupportCollection
     {
         $messages = $this->getTransformedMessagesForUser();
         $scheduled = $this->getTransformedScheduledMessages();
@@ -107,7 +106,7 @@ class Webinar extends Model
         return $allMessages->sortBy('timestamp');
     }
 
-    public function getMessagesForUser(User $user = null) : SupportCollection
+    public function getMessagesForUser(User $user = null): SupportCollection
     {
         $messages = $this->getTransformedMessagesForUser($user);
         $scheduled = $this->getTransformedScheduledMessages();
@@ -124,7 +123,7 @@ class Webinar extends Model
             ->get();
     }
 
-    public function getTransformedMessagesForUser(User $user = null) : array
+    public function getTransformedMessagesForUser(User $user = null): array
     {
         if ($user === null) {
             return [];
@@ -137,7 +136,7 @@ class Webinar extends Model
         return FractalHelper::toArray($messages, new MessageTransformer());
     }
 
-    public function getTransformedScheduledMessages() : array
+    public function getTransformedScheduledMessages(): array
     {
         return FractalHelper::toArray(
             $this->scheduled_messages()->past($this->current_time)->get(),
@@ -148,6 +147,7 @@ class Webinar extends Model
     /**
      * Positive values - the show is running (started in the past)
      * Negative values - time to start.
+     *
      * @return int
      */
     public function getDiffAttribute()
@@ -173,7 +173,7 @@ class Webinar extends Model
         });
     }
 
-    public function isActive() : bool
+    public function isActive(): bool
     {
         if ($this->scheduled_at->isFuture()) {
             return false;
@@ -186,28 +186,29 @@ class Webinar extends Model
         return false;
     }
 
-    public function isFuture() : bool
+    public function isFuture(): bool
     {
         return $this->scheduled_at->isFuture();
     }
 
-    public function isChatEnabled() : bool
+    public function isChatEnabled(): bool
     {
         return $this->isActive();
     }
 
-    public function hasPresenter() : bool
+    public function hasPresenter(): bool
     {
         return true;
+
         return $this->presenter_url !== null || $this->presenter_description !== null;
     }
 
-    public function getLink() : string
+    public function getLink(): string
     {
         return route('webinar.show', $this);
     }
 
-    public function getCurrentTimeAttribute() : ?int
+    public function getCurrentTimeAttribute(): ?int
     {
         if ($this->isFuture()) {
             return -$this->scheduled_at->diffInSeconds();

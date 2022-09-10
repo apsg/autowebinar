@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  * @property int          user_id
  * @property int          webinar_id
  * @property Carbon       email_sent_at
- *
  * @property-read User    user
  * @property-read Webinar webinar
  */

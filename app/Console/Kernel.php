@@ -14,8 +14,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-//        TestEmailCommand::class,
-//        SendEmailsBeforeWebinarCommand::class,
+        //        TestEmailCommand::class,
+        //        SendEmailsBeforeWebinarCommand::class,
         RefreshWebinarsCommand::class,
     ];
 

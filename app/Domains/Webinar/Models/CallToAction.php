@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int          duration
  * @property string|null  button_url
  * @property string|null  button_text
- *
  * @property-read Webinar webinar
  */
 class CallToAction extends Model

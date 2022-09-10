@@ -58,7 +58,7 @@ class WebinarController extends Controller
             return redirect('/');
         }
 
-        if (! $user->isSubscribed($webinar)) {
+        if (!$user->isSubscribed($webinar)) {
             flash()->error('Nie zapisano Cię na ten webinar!');
 
             return redirect('/');

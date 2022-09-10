@@ -20,7 +20,7 @@ class RefreshWebinarsCommand extends Command
         }
     }
 
-    private function calculateDate(Carbon $date, string $repeat) : Carbon
+    private function calculateDate(Carbon $date, string $repeat): Carbon
     {
         while ($date->lt(Carbon::now())) {
             $date->add($repeat);
@@ -32,7 +32,7 @@ class RefreshWebinarsCommand extends Command
     /**
      * @param Webinar $webinar
      */
-    private function updateDate(Webinar $webinar) : void
+    private function updateDate(Webinar $webinar): void
     {
         if (empty(rtrim($webinar->repeat))) {
             $webinar->update([

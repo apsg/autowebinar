@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string       message
  * @property Carbon       created_at
  * @property Carbon       updated_at
- *
  * @property-read User    user
  * @property-read Webinar webinar
  */

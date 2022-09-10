@@ -7,12 +7,12 @@ use Vimeo\Laravel\Facades\Vimeo;
 
 class VimeoService
 {
-    public static function getVideoDetails(string $id) : array
+    public static function getVideoDetails(string $id): array
     {
         return Vimeo::request('/videos/' . $id, [], 'GET');
     }
 
-    public static function getDuration(string $videoId) : int
+    public static function getDuration(string $videoId): int
     {
         return Arr::get(static::getVideoDetails($videoId), 'body.duration', 300);
     }

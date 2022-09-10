@@ -20,7 +20,6 @@ use Illuminate\Support\Collection;
  * @property bool                      is_admin
  * @property Carbon                    created_at
  * @property Carbon                    updated_at
- *
  * @property-read Collection|Message[] messages
  * @property-read Collection|Webinar[] webinars
  */
@@ -57,12 +56,12 @@ class User extends Authenticatable
             ->as('subscription');
     }
 
-    public function isSubscribed(Webinar $webinar) : bool
+    public function isSubscribed(Webinar $webinar): bool
     {
         return $this->webinars()->where('id', $webinar->id)->exists();
     }
 
-    public function newLoginToken() : string
+    public function newLoginToken(): string
     {
         return app(UsersRepository::class)->generateNewLoginToken($this);
     }

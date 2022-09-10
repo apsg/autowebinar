@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int          time
  * @property Carbon       created_at
  * @property Carbon       updated_at
- *
  * @property-read Webinar webinar
  * @property-read Carbon  scheduled_at
  *
@@ -50,8 +49,8 @@ class ScheduledMessage extends Model
     }
 
     /**
-     * @param Builder  $query
-     * @param int|null $time
+     * @param  Builder  $query
+     * @param  int|null $time
      * @return Builder
      */
     public function scopePast(Builder $query, $time)

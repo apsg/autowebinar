@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 
 class FractalHelper
 {
-    public static function toArray($data, TransformerAbstract $transformer) : array
+    public static function toArray($data, TransformerAbstract $transformer): array
     {
         $resource = new Collection($data, $transformer);
 
