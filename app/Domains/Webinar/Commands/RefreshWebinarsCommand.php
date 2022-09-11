@@ -4,6 +4,7 @@ namespace App\Domains\Webinar\Commands;
 use App\Domains\Webinar\Models\Webinar;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Throwable;
 
 class RefreshWebinarsCommand extends Command
 {
@@ -48,7 +49,7 @@ class RefreshWebinarsCommand extends Command
             $webinar->update([
                 'scheduled_at' => $newDate,
             ]);
-        } catch (\Exception $exception) {
+        } catch (Throwable $exception) {
             $webinar->update([
                 'repeat' => null,
             ]);

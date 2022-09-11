@@ -16,7 +16,7 @@ class RefreshWebinarsTest extends TestCase
     {
         // given
         /** @var Webinar $webinar */
-        $webinar = factory(Webinar::class)->create([
+        $webinar = Webinar::factory()->create([
             'scheduled_at' => Carbon::now()->subMinutes(10),
             'length'       => 100,
             'repeat'       => '1 day',
@@ -45,7 +45,7 @@ class RefreshWebinarsTest extends TestCase
     {
         // given
         /** @var Webinar $webinar */
-        $webinar = factory(Webinar::class)->create([
+        $webinar = Webinar::factory()->create([
             'scheduled_at' => Carbon::now(),
             'length'       => 100,
             'repeat'       => '1 day',
@@ -73,7 +73,7 @@ class RefreshWebinarsTest extends TestCase
     {
         // given
         /** @var Webinar $webinar */
-        $webinar = factory(Webinar::class)->create([
+        $webinar = Webinar::factory()->create([
             'scheduled_at' => Carbon::now()->subMinutes(10),
             'length'       => 100,
             'repeat'       => $repeat,
@@ -105,7 +105,7 @@ class RefreshWebinarsTest extends TestCase
     {
         // given
         /** @var Webinar $webinar */
-        $webinar = factory(Webinar::class)->create([
+        $webinar = Webinar::factory()->create([
             'scheduled_at' => Carbon::now()->subMinutes(10),
             'length'       => 100,
             'repeat'       => null,

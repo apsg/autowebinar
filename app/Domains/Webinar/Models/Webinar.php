@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Domains\Webinar\Models;
 
 use App\Domains\Chat\Models\Message;
@@ -12,8 +11,10 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection as SupportCollection;
+use Database\Factories\WebinarFactory;
 
 /**
  * @class App\Domains\Webinar\Models\Webinar
@@ -45,6 +46,8 @@ use Illuminate\Support\Collection as SupportCollection;
  */
 class Webinar extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'description',
@@ -224,5 +227,10 @@ class Webinar extends Model
     public function scopeFinished(Builder $query)
     {
         return $query->whereRaw('time_to_sec(timediff(scheduled_at, CURRENT_TIMESTAMP)) < -length');
+    }
+
+    protected static function newFactory(): WebinarFactory
+    {
+        return new WebinarFactory();
     }
 }

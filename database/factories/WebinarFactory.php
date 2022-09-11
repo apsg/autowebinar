@@ -1,18 +1,23 @@
 <?php
-
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
 use App\Domains\Webinar\Models\Webinar;
 use Carbon\Carbon;
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Webinar::class, function (Faker $faker) {
-    return [
-        'name'         => $faker->title,
-        'description'  => $faker->paragraph,
-        'video'        => $faker->url,
-        'scheduled_at' => Carbon::now()->addMinutes(rand(1, 100)),
-        'length'       => rand(10, 200),
-        'repeat'       => null,
-    ];
-});
+class WebinarFactory extends Factory
+{
+    protected $model = Webinar::class;
+
+    public function definition(): array
+    {
+        return [
+            'name'         => $this->faker->title,
+            'description'  => $this->faker->paragraph,
+            'video'        => $this->faker->url,
+            'scheduled_at' => Carbon::now()->addMinutes(rand(1, 100)),
+            'length'       => rand(10, 200),
+            'repeat'       => null,
+        ];
+    }
+}

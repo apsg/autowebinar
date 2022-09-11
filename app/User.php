@@ -1,11 +1,12 @@
 <?php
-
 namespace App;
 
 use App\Domains\Chat\Models\Message;
 use App\Domains\Webinar\Models\Webinar;
 use App\Repositories\UsersRepository;
 use Carbon\Carbon;
+use Database\Factories\UserFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
@@ -26,6 +27,7 @@ use Illuminate\Support\Collection;
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasFactory;
 
     protected $fillable = [
         'name',
@@ -64,5 +66,10 @@ class User extends Authenticatable
     public function newLoginToken(): string
     {
         return app(UsersRepository::class)->generateNewLoginToken($this);
+    }
+
+    protected static function newFactory(): UserFactory
+    {
+        return new UserFactory();
     }
 }
