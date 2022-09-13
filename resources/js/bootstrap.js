@@ -1,5 +1,4 @@
-import _ from 'lodash';
-window._ = _;
+window._ = require('lodash');
 
 try {
     window.Popper = require('popper.js').default;
@@ -8,8 +7,7 @@ try {
     require('bootstrap');
 } catch (e) {}
 
-import axios from 'axios';
-window.axios = axios;
+window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -20,17 +18,15 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 import Echo from 'laravel-echo';
-import moment from 'moment';
-window.moment = moment;
+window.moment = require('moment');
 
-import Pusher from 'pusher-js';
-window.Pusher = Pusher;
+window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: import.meta.env.VITE_PUSHER_APP_KEY,
-    cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
+    key: process.env.MIX_PUSHER_APP_KEY,
+    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
     forceTLS: true
 });
 
-import '@fortawesome/fontawesome-free'
+require('@fortawesome/fontawesome-free')
