@@ -27,3 +27,5 @@ Homestead.json
 .github/php-cs-fixer/
 
 .php_cs.cache
+
+/public/build
