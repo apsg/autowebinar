@@ -39,4 +39,13 @@ class UserWebinar extends Pivot
     {
         return $this->belongsTo(Webinar::class);
     }
+
+    public function getTimeSpentFormatted(): ?string
+    {
+        if ($this->started_at === null || $this->finished_at === null) {
+            return null;
+        }
+
+        return $this->finished_at->diffInSeconds($this->started_at) . ' s';
+    }
 }

@@ -3,13 +3,14 @@
 use App\Domains\Webinar\Controllers\AdminCtasController;
 use App\Domains\Webinar\Controllers\AdminScheduledController;
 use App\Domains\Webinar\Controllers\AdminWebinarsController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
     'prefix'     => 'admin',
     'middleware' => [
         'auth',
-        'admin',
+        AdminMiddleware::class,
     ],
 ], function () {
     Route::group(['prefix' => 'webinars'], function () {

@@ -1,5 +1,7 @@
 require('./bootstrap');
-window.Vue = require('vue');
+import Vue from 'vue'
+window.Vue = Vue;
+
 Vue.component('chat-messages', require('./components/ChatMessages.vue').default);
 Vue.component('chat-form', require('./components/ChatForm.vue').default);
 Vue.component('v-video', require('./components/VVideo.vue').default);

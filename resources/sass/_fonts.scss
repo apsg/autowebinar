@@ -1,24 +1,24 @@
 @font-face {
     font-family: "DINPro-Bold";
-    src: url("./fonts/DINPro-Bold13934.eot"); /* IE9 Compat Modes */
-    src: url("./fonts/DINPro-Bold13934.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("./fonts/DINPro-Bold13934.otf") format("opentype"), /* Open Type Font */
-    url("./fonts/DINPro-Bold13934.svg") format("svg"), /* Legacy iOS */
-    url("./fonts/DINPro-Bold13934.ttf") format("truetype"), /* Safari, Android, iOS */
-    url("./fonts/DINPro-Bold13934.woff") format("woff"), /* Modern Browsers */
-    url("./fonts/DINPro-Bold13934.woff2") format("woff2"); /* Modern Browsers */
+    src: url("public/fonts/DINPro-Bold13934.eot"); /* IE9 Compat Modes */
+    src: url("public/fonts/DINPro-Bold13934.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("public/fonts/DINPro-Bold13934.otf") format("opentype"), /* Open Type Font */
+    url("public/fonts/DINPro-Bold13934.svg") format("svg"), /* Legacy iOS */
+    url("public/fonts/DINPro-Bold13934.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("public/fonts/DINPro-Bold13934.woff") format("woff"), /* Modern Browsers */
+    url("public/fonts/DINPro-Bold13934.woff2") format("woff2"); /* Modern Browsers */
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-Regular.eot');
-    src: url('./fonts/SourceSerifPro-Regular.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-Regular.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-Regular.woff') format('woff'),
-    url('./fonts/SourceSerifPro-Regular.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-Regular.svg#SourceSerifPro-Regular') format('svg');
+    src: url('public/fonts/SourceSerifPro-Regular.eot');
+    src: url('public/fonts/SourceSerifPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-Regular.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-Regular.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-Regular.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-Regular.svg#SourceSerifPro-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -26,12 +26,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-BoldIt.eot');
-    src: url('./fonts/SourceSerifPro-BoldIt.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-BoldIt.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-BoldIt.woff') format('woff'),
-    url('./fonts/SourceSerifPro-BoldIt.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-BoldIt.svg#SourceSerifPro-BoldIt') format('svg');
+    src: url('public/fonts/SourceSerifPro-BoldIt.eot');
+    src: url('public/fonts/SourceSerifPro-BoldIt.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-BoldIt.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-BoldIt.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-BoldIt.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-BoldIt.svg#SourceSerifPro-BoldIt') format('svg');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -39,12 +39,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-ExtraLightIt.eot');
-    src: url('./fonts/SourceSerifPro-ExtraLightIt.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-ExtraLightIt.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-ExtraLightIt.woff') format('woff'),
-    url('./fonts/SourceSerifPro-ExtraLightIt.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-ExtraLightIt.svg#SourceSerifPro-ExtraLightIt') format('svg');
+    src: url('public/fonts/SourceSerifPro-ExtraLightIt.eot');
+    src: url('public/fonts/SourceSerifPro-ExtraLightIt.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-ExtraLightIt.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-ExtraLightIt.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-ExtraLightIt.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-ExtraLightIt.svg#SourceSerifPro-ExtraLightIt') format('svg');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
@@ -52,12 +52,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-It.eot');
-    src: url('./fonts/SourceSerifPro-It.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-It.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-It.woff') format('woff'),
-    url('./fonts/SourceSerifPro-It.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-It.svg#SourceSerifPro-It') format('svg');
+    src: url('public/fonts/SourceSerifPro-It.eot');
+    src: url('public/fonts/SourceSerifPro-It.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-It.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-It.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-It.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-It.svg#SourceSerifPro-It') format('svg');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -65,12 +65,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-Semibold.eot');
-    src: url('./fonts/SourceSerifPro-Semibold.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-Semibold.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-Semibold.woff') format('woff'),
-    url('./fonts/SourceSerifPro-Semibold.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-Semibold.svg#SourceSerifPro-Semibold') format('svg');
+    src: url('public/fonts/SourceSerifPro-Semibold.eot');
+    src: url('public/fonts/SourceSerifPro-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-Semibold.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-Semibold.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-Semibold.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-Semibold.svg#SourceSerifPro-Semibold') format('svg');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -78,12 +78,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-BlackIt.eot');
-    src: url('./fonts/SourceSerifPro-BlackIt.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-BlackIt.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-BlackIt.woff') format('woff'),
-    url('./fonts/SourceSerifPro-BlackIt.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-BlackIt.svg#SourceSerifPro-BlackIt') format('svg');
+    src: url('public/fonts/SourceSerifPro-BlackIt.eot');
+    src: url('public/fonts/SourceSerifPro-BlackIt.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-BlackIt.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-BlackIt.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-BlackIt.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-BlackIt.svg#SourceSerifPro-BlackIt') format('svg');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -91,12 +91,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-ExtraLight.eot');
-    src: url('./fonts/SourceSerifPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-ExtraLight.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-ExtraLight.woff') format('woff'),
-    url('./fonts/SourceSerifPro-ExtraLight.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-ExtraLight.svg#SourceSerifPro-ExtraLight') format('svg');
+    src: url('public/fonts/SourceSerifPro-ExtraLight.eot');
+    src: url('public/fonts/SourceSerifPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-ExtraLight.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-ExtraLight.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-ExtraLight.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-ExtraLight.svg#SourceSerifPro-ExtraLight') format('svg');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -104,12 +104,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-SemiboldIt.eot');
-    src: url('./fonts/SourceSerifPro-SemiboldIt.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-SemiboldIt.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-SemiboldIt.woff') format('woff'),
-    url('./fonts/SourceSerifPro-SemiboldIt.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-SemiboldIt.svg#SourceSerifPro-SemiboldIt') format('svg');
+    src: url('public/fonts/SourceSerifPro-SemiboldIt.eot');
+    src: url('public/fonts/SourceSerifPro-SemiboldIt.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-SemiboldIt.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-SemiboldIt.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-SemiboldIt.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-SemiboldIt.svg#SourceSerifPro-SemiboldIt') format('svg');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -117,12 +117,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-LightIt.eot');
-    src: url('./fonts/SourceSerifPro-LightIt.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-LightIt.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-LightIt.woff') format('woff'),
-    url('./fonts/SourceSerifPro-LightIt.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-LightIt.svg#SourceSerifPro-LightIt') format('svg');
+    src: url('public/fonts/SourceSerifPro-LightIt.eot');
+    src: url('public/fonts/SourceSerifPro-LightIt.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-LightIt.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-LightIt.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-LightIt.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-LightIt.svg#SourceSerifPro-LightIt') format('svg');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
@@ -130,12 +130,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-Light.eot');
-    src: url('./fonts/SourceSerifPro-Light.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-Light.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-Light.woff') format('woff'),
-    url('./fonts/SourceSerifPro-Light.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-Light.svg#SourceSerifPro-Light') format('svg');
+    src: url('public/fonts/SourceSerifPro-Light.eot');
+    src: url('public/fonts/SourceSerifPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-Light.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-Light.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-Light.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-Light.svg#SourceSerifPro-Light') format('svg');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -143,12 +143,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-Black.eot');
-    src: url('./fonts/SourceSerifPro-Black.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-Black.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-Black.woff') format('woff'),
-    url('./fonts/SourceSerifPro-Black.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-Black.svg#SourceSerifPro-Black') format('svg');
+    src: url('public/fonts/SourceSerifPro-Black.eot');
+    src: url('public/fonts/SourceSerifPro-Black.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-Black.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-Black.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-Black.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-Black.svg#SourceSerifPro-Black') format('svg');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -156,12 +156,12 @@
 
 @font-face {
     font-family: 'Source Serif Pro';
-    src: url('./fonts/SourceSerifPro-Bold.eot');
-    src: url('./fonts/SourceSerifPro-Bold.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/SourceSerifPro-Bold.woff2') format('woff2'),
-    url('./fonts/SourceSerifPro-Bold.woff') format('woff'),
-    url('./fonts/SourceSerifPro-Bold.ttf') format('truetype'),
-    url('./fonts/SourceSerifPro-Bold.svg#SourceSerifPro-Bold') format('svg');
+    src: url('public/fonts/SourceSerifPro-Bold.eot');
+    src: url('public/fonts/SourceSerifPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('public/fonts/SourceSerifPro-Bold.woff2') format('woff2'),
+    url('public/fonts/SourceSerifPro-Bold.woff') format('woff'),
+    url('public/fonts/SourceSerifPro-Bold.ttf') format('truetype'),
+    url('public/fonts/SourceSerifPro-Bold.svg#SourceSerifPro-Bold') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;

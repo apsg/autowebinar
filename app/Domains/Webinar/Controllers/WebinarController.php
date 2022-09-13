@@ -10,6 +10,7 @@ use App\Repositories\UsersRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\UnauthorizedException;
 
 class WebinarController extends Controller
 {
@@ -41,6 +42,10 @@ class WebinarController extends Controller
     ) {
         $user = $usersRepository->firstOrCreate($request->input('name'), $request->input('email'));
 
+        if ($user->isAdmin()) {
+            throw new UnauthorizedException();
+        }
+
         Auth::login($user);
 
         $subscriptionRepository->subscribe($user, $webinar);
@@ -68,5 +73,16 @@ class WebinarController extends Controller
         $repository->clearLoginToken($user);
 
         return redirect(route('webinar.show', $webinar));
+    }
+
+    public function presence(Webinar $webinar, WebinarSubscriptionRepository $repository)
+    {
+        if (Auth::guest()) {
+            return response('Not logged in', 403);
+        }
+
+        $repository->presence(Auth::user(), $webinar);
+
+        return response('ok');
     }
 }

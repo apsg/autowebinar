@@ -79,7 +79,12 @@ class Webinar extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)
-            ->using(UserWebinar::class);
+            ->using(UserWebinar::class)
+            ->withPivot([
+                'subscribed_at',
+                'started_at',
+                'finished_at',
+            ]);
     }
 
     public function messages()

@@ -3,7 +3,7 @@
 
 // Variables
 @import 'variables';
-@import 'fonts';
+//@import 'fonts';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -16,7 +16,7 @@ html {
 
 body {
     background: #fff; /* fallback for old browsers */
-    background-image: url('images/tlo-strony.png');
+    background-image: url('/images/tlo-strony.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

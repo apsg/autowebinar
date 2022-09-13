@@ -30,4 +30,5 @@ Route::group(['prefix' => 'webinar', 'middleware' => 'auth'], function () {
     Route::get('/{webinar}/messages', ChatController::class . '@index');
     Route::get('/{webinar}/messages', ChatController::class . '@fetchMessages');
     Route::post('/{webinar}/messages', ChatController::class . '@sendMessage');
+    Route::get('/{webinar}/presence', WebinarController::class . '@presence');
 });

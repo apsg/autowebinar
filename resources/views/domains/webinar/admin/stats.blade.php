@@ -11,13 +11,27 @@
             <thead>
             <tr>
                 <th>Nazwa</th>
-                <th>Data</th>
-                <th>Link</th>
+                <th>Start</th>
+                <th>Stop</th>
+                <th>Czas</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($webinar->user)
-
+            @foreach($webinar->users()->get() as $user)
+                <tr>
+                    <td>
+                        {{ $user->name }} ({{ $user->email }})
+                    </td>
+                    <td>
+                        {{ $user->pivot->started_at?->format('Y-m-d H:i:s') }}
+                    </td>
+                    <td>
+                        {{ $user->pivot->finished_at?->format('Y-m-d H:i:s') }}
+                    </td>
+                    <td>
+                        {{ $user->pivot->getTimeSpentFormatted() }}
+                    </td>
+                </tr>
             @endforeach
             </tbody>
         </table>

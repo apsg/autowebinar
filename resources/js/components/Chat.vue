@@ -87,6 +87,9 @@ export default {
         tick() {
             this.time += 1;
             this.processScheduled();
+            if (Math.random() > 0.7) {
+                this.presence();
+            }
             setTimeout(this.tick, 1000);
         },
 
@@ -100,6 +103,10 @@ export default {
                 });
 
             this.scrollBottom();
+        },
+
+        presence() {
+            axios.get('/webinar/' + this.webinar + '/presence');
         }
     }
 }
