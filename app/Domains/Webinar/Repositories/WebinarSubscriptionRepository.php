@@ -4,6 +4,7 @@ namespace App\Domains\Webinar\Repositories;
 
 use App\Domains\Webinar\Models\Webinar;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class WebinarSubscriptionRepository
@@ -14,7 +15,10 @@ class WebinarSubscriptionRepository
             return;
         }
 
-        $user->webinars()->attach($webinar->id);
+        $user->webinars()->attach($webinar->id, [
+            'subscribed_at' => Carbon::now(),
+            'started_at'    => Carbon::now(),
+        ]);
     }
 
     public function isUserSubscribed(User $user, Webinar $webinar): bool

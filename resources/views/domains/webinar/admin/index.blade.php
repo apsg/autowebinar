@@ -39,6 +39,9 @@
                                             class="form-control"
                                             type="text" disabled value="{{ $webinar->getLink() }}">
                                 </td>
+                                <td>
+                                    <a href="{{ route('admin.webinar.stats', $webinar) }}" target="_blank">Statystyki</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

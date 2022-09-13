@@ -5,6 +5,7 @@ namespace App\Domains\Chat\Events;
 use App\Domains\Chat\Models\Message;
 use App\User;
 use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -33,7 +34,7 @@ class MessageSentEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('chat.' . $this->message->webinar_id);
+        return new PresenceChannel('chat.' . $this->message->webinar_id);
     }
 
     public function broadcastAs()

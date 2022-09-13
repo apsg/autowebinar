@@ -9,12 +9,12 @@ use App\Domains\Webinar\Events\WebinarUpdatedEvent;
 use App\Helpers\FractalHelper;
 use App\User;
 use Carbon\Carbon;
+use Database\Factories\WebinarFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection as SupportCollection;
-use Database\Factories\WebinarFactory;
 
 /**
  * @class App\Domains\Webinar\Models\Webinar
@@ -86,6 +86,13 @@ class Webinar extends Model
     {
         return $this->hasMany(Message::class)
             ->orderBy('created_at');
+    }
+
+    public function archivedMessages()
+    {
+        return $this->messages()
+            ->withTrashed()
+            ->whereNotNull('deleted_at');
     }
 
     public function scheduled_messages()

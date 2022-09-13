@@ -5,6 +5,7 @@ use App\Domains\Webinar\Models\Webinar;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property int          id
@@ -18,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Message extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['user_id', 'message', 'webinar_id'];
 
     public function user()

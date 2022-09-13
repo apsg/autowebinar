@@ -1,10 +1,10 @@
 <?php
-
 namespace App\Domains\Webinar\Controllers;
 
 use App\Domains\Webinar\Models\Webinar;
 use App\Domains\Webinar\Requests\WebinarEditRequest;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class AdminWebinarsController extends Controller
 {
@@ -59,5 +59,21 @@ class AdminWebinarsController extends Controller
         flash('Usunięto wiadomości');
 
         return back();
+    }
+
+    public function restart(Webinar $webinar)
+    {
+        $webinar->update([
+            'scheduled_at' => Carbon::now()->addSeconds(5),
+        ]);
+
+        flash('Zrestartowano');
+
+        return back();
+    }
+
+    public function stats(Webinar $webinar)
+    {
+        return view('domains.webinar.admin.stats')->with(compact('webinar'));
     }
 }

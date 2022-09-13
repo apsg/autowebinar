@@ -188,6 +188,21 @@
                     </button>
                 </form>
             </div>
+
+            @if(app()->environment('local'))
+            <div class="col-md-12 card mt-2 pb-3">
+                <h3 class="mt-2">Restart</h3>
+                <form action="{{ route('admin.webinar.restart', $webinar) }}" method="post"
+                      enctype="multipart/form-data">
+                    @csrf
+                    <button class="btn btn-danger confirm">
+                        <i class="fa fa-trash"></i>
+                        Restart za 5s
+                    </button>
+                </form>
+            </div>
+            @endif
+
         </div>
     </div>
 @endsection

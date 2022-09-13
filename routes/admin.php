@@ -19,6 +19,8 @@ Route::group([
         Route::get('/{webinar}', AdminWebinarsController::class . '@edit')->name('admin.webinar.edit');
         Route::post('/{webinar}', AdminWebinarsController::class . '@patch')->name('admin.webinar.patch');
         Route::delete('/{webinar}', AdminWebinarsController::class . '@destroy')->name('admin.webinar.destroy');
+        Route::post('/{webinar}/restart', AdminWebinarsController::class . '@restart')->name('admin.webinar.restart');
+        Route::get('/{webinar}/stats', AdminWebinarsController::class . '@stats')->name('admin.webinar.stats');
 
         Route::delete('/{webinar}/delete_messages', AdminWebinarsController::class . '@deleteMessages')
             ->name('admin.webinar.delete_messages');

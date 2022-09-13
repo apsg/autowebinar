@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Domains\Webinar\Models;
 
 use App\User;
@@ -11,7 +10,10 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  *
  * @property int          user_id
  * @property int          webinar_id
- * @property Carbon       email_sent_at
+ * @property Carbon|null  email_sent_at
+ * @property Carbon|null  subscribed_at
+ * @property Carbon|null  started_at
+ * @property Carbon|null  finished_at
  * @property-read User    user
  * @property-read Webinar webinar
  */
@@ -21,6 +23,9 @@ class UserWebinar extends Pivot
 
     protected $dates = [
         'email_sent_at',
+        'subscribed_at',
+        'started_at',
+        'finished_at',
     ];
 
     public $timestamps = false;
