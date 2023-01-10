@@ -27,7 +27,7 @@
         "@fortawesome/fontawesome-free": "^5.13.0",
         "font-awesome": "^4.7.0",
         "laravel-echo": "^1.8.0",
-        "luxon": "^1.25.0",
+        "luxon": "^1.28.1",
         "moment": "^2.26.0",
         "node-sass": "^4.14.1",
         "pusher-js": "^6.0.3",
